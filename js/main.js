@@ -9,6 +9,50 @@ if (siteNav) {
   window.addEventListener('scroll', onScroll, { passive: true });
 }
 
+// ====== SHOWREEL MODAL ======
+const showreelModal = document.getElementById('showreelModal');
+const showreelVideoWrap = document.getElementById('showreelVideoWrap');
+const showreelClose = document.getElementById('showreelClose');
+const SHOWREEL_SRC = 'https://player.vimeo.com/video/1218481012?h=99d5dba20c&autoplay=1&title=0&byline=0&portrait=0';
+
+function openShowreel() {
+  if (!showreelModal || !showreelVideoWrap) return;
+  const iframe = document.createElement('iframe');
+  iframe.src = SHOWREEL_SRC;
+  iframe.frameBorder = '0';
+  iframe.allow = 'autoplay; fullscreen; picture-in-picture';
+  iframe.title = 'Lazizbek Media showreel';
+  showreelVideoWrap.innerHTML = '';
+  showreelVideoWrap.appendChild(iframe);
+  showreelModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeShowreel() {
+  if (!showreelModal || !showreelVideoWrap) return;
+  showreelModal.classList.remove('open');
+  showreelVideoWrap.innerHTML = '';
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('#heroPlayBtn, a[href="#works"].btn-gold').forEach(el => {
+  if (el.tagName === 'A') {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openShowreel();
+    });
+  } else {
+    el.addEventListener('click', openShowreel);
+  }
+});
+if (showreelClose) showreelClose.addEventListener('click', closeShowreel);
+if (showreelModal) {
+  showreelModal.addEventListener('click', (e) => {
+    if (e.target === showreelModal) closeShowreel();
+  });
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeShowreel();
+});
+
 // ====== MOBILE NAV TOGGLE ======
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');

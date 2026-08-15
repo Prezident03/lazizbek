@@ -31,30 +31,39 @@
   </div>
 </nav>
 
-<!-- HERO — VIDEO SHOWREEL -->
-<section class="hero-video">
-  <div class="hero-poster" aria-hidden="true"></div>
-  <div class="hero-video-embed" aria-hidden="true">
-    <iframe src="https://player.vimeo.com/video/1218481012?h=99d5dba20c&background=1&autoplay=1&loop=1&muted=1&controls=0&app_id=122963" frameborder="0" allow="autoplay; fullscreen" title="Lazizbek Media showreel"></iframe>
-  </div>
-  <div class="hero-video-overlay" aria-hidden="true"></div>
-  <div class="hero-video-content">
-    <p class="hero-tagline">Biz sizning lahzalaringizni hikoyaga aylantiramiz.</p>
-    <h1 class="hero-title">
+<!-- HERO — PHOTO BACKGROUND, LEFT-ALIGNED -->
+<section class="hero-photo" id="heroPhoto">
+  <div class="hero-photo-bg"></div>
+  <div class="hero-photo-overlay" aria-hidden="true"></div>
+  <div class="hero-photo-content">
+    <p class="hero-tagline-small">Biz sizning lahzalaringizni hikoyaga aylantiramiz.</p>
+    <h1 class="hero-title-left">
       <span class="word-1">LAZIZBEK</span>
       <span class="word-2">MEDIA</span>
     </h1>
-    <p class="hero-sub mono" style="letter-spacing:4px;font-size:12px;">VIDEOGRAFIYA & FILM ISHLAB CHIQARISH</p>
-    <div class="hero-actions">
+    <p class="hero-sub-left mono">VIDEOGRAFIYA & FILM ISHLAB CHIQARISH</p>
+    <div class="hero-actions-left">
       <a href="#works" class="btn btn-gold"><i class="ti ti-player-play-filled"></i> SHOWREELNI KO'RISH</a>
       <a href="buyurtma.html" class="btn btn-outline">SANANGIZNI BAND QILING</a>
     </div>
   </div>
+  <button type="button" class="hero-play-btn" id="heroPlayBtn" aria-label="Showreelni ko'rish">
+    <span class="hero-play-circle"><i class="ti ti-player-play-filled"></i></span>
+    <span class="hero-play-label">SHOWREELNI<br>KO'RISH</span>
+  </button>
   <div class="hero-scroll-hint" aria-hidden="true">
     <span class="mono">PASTGA</span>
     <div class="line"></div>
   </div>
 </section>
+
+<!-- SHOWREEL MODAL (opens on play click) -->
+<div class="showreel-modal" id="showreelModal" aria-hidden="true">
+  <div class="showreel-modal-inner">
+    <button type="button" class="showreel-close" id="showreelClose" aria-label="Yopish"><i class="ti ti-x"></i></button>
+    <div class="showreel-video-wrap" id="showreelVideoWrap"></div>
+  </div>
+</div>
 
 <!-- TIMECODE DIVIDER -->
 <div class="timecode" aria-hidden="true">

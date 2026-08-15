@@ -62,6 +62,7 @@ Bu — mijozlar forma orqali yozishi mumkin, lekin faqat siz (Firebase Console o
 
 ## 4. Video/rasm qo'shish
 
+- **Hero rasmi (bosh sahifa fon surati)**: `images/hero.jpg` nomi bilan (afzalan 1920×1080px yoki kattaroq, gorizontal, to'y/juftlik surati) `images/` papkaga joylang — `index.html` shu faylni avtomatik fon sifatida oladi. Fayl topilmasa, o'rniga zinapoyali oltin-jigarrang gradient ko'rinadi.
 - **Portfolio videolari**: YouTube (unlisted) yoki Vimeo'ga yuklab, `portfolio.html` dagi `.pf-card` ichiga link/embed qo'shing — bu tekin va tez ishlaydi.
 - **Rasm/thumbnail**: `images/` papkaga qo'ying yoki Firebase Storage ishlatib, URL'ni HTML'ga joylashtiring.
 
