@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buyurtma berish — Lazizbek Media</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">LAZIZBEK <span>MEDIA</span></a>
+    <div class="nav-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="narxlar.html">Narxlar</a>
+      <a href="haqida.html">Haqida</a>
+      <a href="buyurtma.html" class="active">Aloqa</a>
+    </div>
+    <a href="buyurtma.html" class="btn btn-gold nav-cta">Buyurtma berish</a>
+    <button class="nav-toggle" aria-label="Menyu"><i class="ti ti-menu-2"></i></button>
+  </div>
+</nav>
+
+<header class="hero" style="min-height:35vh;padding:100px 32px 40px;">
+  <span class="eyebrow">Aloqa</span>
+  <h1 style="font-size:clamp(30px,5vw,50px);">Keling, birga <span class="serif-italic">yarataylik</span></h1>
+  <p class="lead">Quyidagi formani to'ldiring — 24 soat ichida siz bilan bog'lanamiz.</p>
+</header>
+
+<section class="section wrap" style="padding-top:0;">
+  <form id="bookingForm" class="form-wrap">
+    <label style="font-size:12px;color:var(--stone);letter-spacing:0.5px;display:block;margin-bottom:12px;">Sizga qanday xizmat kerak?</label>
+    <input type="hidden" id="selectedService" required>
+    <div class="service-select">
+      <div class="service-opt" data-value="wedding"><i class="ti ti-heart-handshake"></i>To'y</div>
+      <div class="service-opt" data-value="graduation"><i class="ti ti-school"></i>Bitiruv</div>
+      <div class="service-opt" data-value="loveStory"><i class="ti ti-camera-heart"></i>Love story</div>
+      <div class="service-opt" data-value="session"><i class="ti ti-camera"></i>Video sessiya</div>
+      <div class="service-opt" data-value="event"><i class="ti ti-confetti"></i>Tadbir</div>
+      <div class="service-opt" data-value="commercial"><i class="ti ti-building-skyscraper"></i>Reklama</div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="name">Ismingiz</label>
+        <input type="text" id="name" placeholder="Ismingizni kiriting" required>
+      </div>
+      <div class="field">
+        <label for="phone">Telefon / Telegram</label>
+        <input type="text" id="phone" placeholder="+998 90 123 45 67" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="field">
+        <label for="eventDate">Tadbir sanasi</label>
+        <input type="date" id="eventDate" required>
+      </div>
+      <div class="field">
+        <label for="location">Joylashuv</label>
+        <input type="text" id="location" placeholder="Samarqand">
+      </div>
+    </div>
+
+    <div class="field" style="margin-bottom:24px;">
+      <label for="notes">Qo'shimcha izoh</label>
+      <textarea id="notes" placeholder="Loyihangiz haqida qisqacha yozing..."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">So'rov yuborish</button>
+    <p id="formMsg" class="form-msg"></p>
+  </form>
+
+  <div style="text-align:center;margin-top:56px;padding-top:40px;border-top:1px solid var(--line-soft);">
+    <p style="font-size:13px;">Yoki to'g'ridan-to'g'ri yozing</p>
+    <div class="social" style="justify-content:center;margin-top:16px;">
+      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+      <a href="#" aria-label="Telegram"><i class="ti ti-brand-telegram"></i></a>
+      <a href="tel:+998901234567" aria-label="Telefon"><i class="ti ti-phone"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a href="index.html" class="logo">LAZIZBEK <span>MEDIA</span></a>
+    <div class="footer-links">
+      <a href="portfolio.html">Portfolio</a>
+      <a href="narxlar.html">Narxlar</a>
+      <a href="haqida.html">Haqida</a>
+      <a href="buyurtma.html">Aloqa</a>
+    </div>
+  </div>
+  <p class="copyright">© 2026 Lazizbek Media. Barcha huquqlar himoyalangan.</p>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
