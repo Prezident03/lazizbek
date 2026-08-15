@@ -41,11 +41,6 @@ if (navToggle && navLinks) {
 // ====== MOBILE BOTTOM NAV ======
 document.querySelectorAll('.mbn-btn').forEach(btn => {
   btn.addEventListener('click', () => {
-    if (btn.dataset.action === 'menu') {
-      const toggle = document.getElementById('navToggle');
-      if (toggle) toggle.click();
-      return;
-    }
     const link = btn.dataset.link;
     if (!link) return;
     if (link.startsWith('#')) {
@@ -53,8 +48,6 @@ document.querySelectorAll('.mbn-btn').forEach(btn => {
       if (target) {
         window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
       }
-    } else if (link === 'index.html' && /(^|\/)index\.html$|\/$/.test(window.location.pathname)) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       window.location.href = link;
     }
@@ -130,7 +123,7 @@ if (filterBtns.length && pfCards.length) {
 }
 
 // ====== SERVICE SELECT (booking form) ======
-const serviceOpts = document.querySelectorAll('.service-select .service-opt');
+const serviceOpts = document.querySelectorAll('.service-opt');
 const serviceInput = document.querySelector('#selectedService');
 if (serviceOpts.length) {
   serviceOpts.forEach(opt => {

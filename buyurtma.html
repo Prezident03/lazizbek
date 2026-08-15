@@ -18,13 +18,15 @@
       <small>KINOMAN · SAMARQAND</small>
     </a>
     <div class="nav-links" id="navLinks">
+      <a href="index.html">BOSH SAHIFA</a>
       <a href="index.html#works">ISH</a>
       <a href="index.html#services">XIZMATLAR</a>
+      <a href="narxlar.html">PAKETLAR</a>
       <a href="haqida.html">HAQIDA</a>
-      <a href="narxlar.html">NARXLAR</a>
+      <a href="index.html#reviews">SHARHLAR</a>
       <a href="buyurtma.html" class="active">ALOQA</a>
     </div>
-    <a href="buyurtma.html" class="btn btn-gold nav-cta">SANANI BAND QILISH</a>
+    <a href="buyurtma.html" class="btn btn-gold nav-cta">SANANGIZNI BAND QILING</a>
     <button class="nav-toggle" id="navToggle" aria-label="Menyu"><i class="ti ti-menu-2"></i></button>
   </div>
 </nav>
@@ -41,130 +43,113 @@
 <!-- BOOKING FORM -->
 <section class="section" style="padding-top:60px;">
   <div class="section-wrap">
-    <div class="form-wrap form-wrap-wide">
+    <div class="form-wrap">
 
       <form id="bookingForm" novalidate>
         <input type="hidden" id="selectedService" required>
         <input type="hidden" id="selectedPackage">
 
-        <div class="booking-split">
-
-          <div class="booking-form-col">
-
-            <!-- STEP 1 · XIZMAT TURI -->
-            <p class="form-section-label reveal">1. XIZMAT TURI</p>
-            <div class="form-block reveal reveal-delay-1">
-              <div class="service-select stagger">
-                <div class="service-opt" data-value="wedding"><i class="ti ti-heart-handshake"></i><span class="so-name">To'y</span></div>
-                <div class="service-opt" data-value="graduation"><i class="ti ti-school"></i><span class="so-name">Bitiruv</span></div>
-                <div class="service-opt" data-value="loveStory"><i class="ti ti-camera-heart"></i><span class="so-name">Sevgi hikoyasi</span></div>
-                <div class="service-opt" data-value="event"><i class="ti ti-confetti"></i><span class="so-name">Tadbir</span></div>
-                <div class="service-opt" data-value="commercial"><i class="ti ti-building-skyscraper"></i><span class="so-name">Reklama</span></div>
-                <div class="service-opt" data-value="other"><i class="ti ti-sparkles"></i><span class="so-name">Boshqa</span></div>
-              </div>
-            </div>
-
-            <!-- STEP 2 · PAKET -->
-            <p class="form-section-label reveal" style="margin-top:28px;">2. PAKET</p>
-            <div class="form-block reveal reveal-delay-1">
-              <div class="field">
-                <label for="package">Paket (ixtiyoriy)</label>
-                <select id="package">
-                  <option value="">— Tanlamang</option>
-                  <option value="start">START · $150</option>
-                  <option value="pro">PRO · $300 (Eng ko'p tanlanadi)</option>
-                  <option value="cinema">KINO · $500 dan</option>
-                  <option value="quote">Shaxsiy taklif so'rash</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- STEP 3-5 · SANA / JOY / VAQT -->
-            <p class="form-section-label reveal" style="margin-top:28px;">3–5. SANA, JOY VA VAQT</p>
-            <div class="form-block reveal reveal-delay-1">
-              <div class="form-row">
-                <div class="field">
-                  <label for="eventDate">Sana</label>
-                  <input type="date" id="eventDate">
-                </div>
-                <div class="field">
-                  <label for="eventTime">Taxminiy vaqt</label>
-                  <input type="time" id="eventTime">
-                </div>
-              </div>
-              <div class="field" style="margin-top:18px;">
-                <label for="location">Joylashuv</label>
-                <input type="text" id="location" placeholder="Samarqand · Registon" value="Samarkand">
-              </div>
-              <p style="margin-top:12px;color:var(--stone-dim);font-size:12px;">Sanani tanlashning eng oson yo'li — o'ng tomondagi kalendardan bosing.</p>
-            </div>
-
-            <!-- STEP 6-9 · ALOQA MA'LUMOTLARI -->
-            <p class="form-section-label reveal" style="margin-top:28px;">6–9. ALOQA MA'LUMOTLARINGIZ</p>
-            <div class="form-block reveal reveal-delay-1">
-              <div class="form-row">
-                <div class="field">
-                  <label for="name">Ismingiz</label>
-                  <input type="text" id="name" placeholder="Ism familiya" required>
-                </div>
-                <div class="field">
-                  <label for="phone">Telefon / Telegram</label>
-                  <input type="tel" id="phone" placeholder="+998 90 123 45 67" required>
-                </div>
-              </div>
-              <div class="field" style="margin-top:18px;">
-                <label for="notes">Qo'shimcha izoh / loyiha haqida qisqacha</label>
-                <textarea id="notes" placeholder="Masalan: 2 kishilik oilaviy video sessiya, Registon atrofida, 2 soat..."></textarea>
-              </div>
-            </div>
-
-            <!-- YUBORISH -->
-            <div class="reveal">
-              <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:13px;padding:18px 30px;">
-                <i class="ti ti-calendar-event"></i> BO'SHLIKNI TEKSHIRISH & BAND QILISH
-              </button>
-              <p id="formMsg" class="form-msg"></p>
-              <p style="text-align:center;margin-top:16px;color:var(--stone-dim);font-size:12px;">
-                Shu formani yuborganingizdan keyin murojaatingizni tahlil qilib, 24 soat ichida telefon orqali bog'lanamiz. ✓ Hech qanday oldindan to'lov talab qilmaymiz.
-              </p>
-            </div>
-
+        <!-- STEP 1 · XIZMAT TURI -->
+        <p class="form-section-label reveal">QADAM 01 · NIMA KERAK?</p>
+        <div class="form-block reveal reveal-delay-1">
+          <div class="service-select stagger">
+            <div class="service-opt" data-value="wedding"><i class="ti ti-heart-handshake"></i><span class="so-name">To'y</span></div>
+            <div class="service-opt" data-value="graduation"><i class="ti ti-school"></i><span class="so-name">Bitiruv</span></div>
+            <div class="service-opt" data-value="loveStory"><i class="ti ti-camera-heart"></i><span class="so-name">Sevgi hikoyasi</span></div>
+            <div class="service-opt" data-value="event"><i class="ti ti-confetti"></i><span class="so-name">Tadbir</span></div>
+            <div class="service-opt" data-value="commercial"><i class="ti ti-building-skyscraper"></i><span class="so-name">Reklama</span></div>
+            <div class="service-opt" data-value="other"><i class="ti ti-sparkles"></i><span class="so-name">Boshqa</span></div>
           </div>
-
-          <!-- AVAILABILITY CALENDAR (sticky) -->
-          <div class="booking-cal-col">
-            <p class="form-section-label reveal">MAVJUDLIK</p>
-            <div class="calendar-wrap reveal reveal-delay-1 booking-cal-sticky">
-              <div class="calendar-head">
-                <div class="calendar-month">Yuklanmoqda…</div>
-                <div class="calendar-navs">
-                  <button type="button" class="calendar-nav-btn cal-prev" aria-label="Oldingi oy"><i class="ti ti-chevron-left"></i></button>
-                  <button type="button" class="calendar-nav-btn cal-next" aria-label="Keyingi oy"><i class="ti ti-chevron-right"></i></button>
-                </div>
-              </div>
-              <div class="calendar-legend">
-                <div class="legend-item"><span class="legend-dot legend-avail"></span> Bo'sh</div>
-                <div class="legend-item"><span class="legend-dot legend-limited"></span> Cheklangan</div>
-                <div class="legend-item"><span class="legend-dot legend-booked"></span> Band</div>
-              </div>
-              <div class="calendar-grid" id="calGridArea"></div>
-            </div>
-          </div>
-
         </div>
+
+        <!-- STEP 2 · KALENDAR -->
+        <p class="form-section-label reveal">QADAM 02 · SIZNING SANANGIZ</p>
+        <div class="calendar-wrap reveal reveal-delay-1">
+          <div class="calendar-head">
+            <div class="calendar-month">Yuklanmoqda…</div>
+            <div class="calendar-navs">
+              <button type="button" class="calendar-nav-btn cal-prev" aria-label="Oldingi oy"><i class="ti ti-chevron-left"></i></button>
+              <button type="button" class="calendar-nav-btn cal-next" aria-label="Keyingi oy"><i class="ti ti-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="calendar-legend">
+            <div class="legend-item"><span class="legend-dot legend-avail"></span> Bo'sh</div>
+            <div class="legend-item"><span class="legend-dot legend-limited"></span> Cheklangan</div>
+            <div class="legend-item"><span class="legend-dot legend-booked"></span> Band</div>
+          </div>
+          <div class="calendar-grid" id="calGridArea"></div>
+          <div style="margin-top:20px;">
+            <div class="field">
+              <label for="eventDate">Yoki sanani qo'lda kiriting (YYYY-MM-DD)</label>
+              <input type="date" id="eventDate">
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 · PAKET + JOY -->
+        <p class="form-section-label reveal" style="margin-top:28px;">QADAM 03 · JOY VA PAKET</p>
+        <div class="form-block reveal reveal-delay-1">
+          <div class="form-row">
+            <div class="field">
+              <label for="location">Joylashuv</label>
+              <input type="text" id="location" placeholder="Samarqand · Registon" value="Samarkand">
+            </div>
+            <div class="field">
+              <label for="package">Paket (ixtiyoriy)</label>
+              <select id="package">
+                <option value="">— Tanlamang</option>
+                <option value="start">START · $150</option>
+                <option value="pro">PRO · $300 (Eng ko'p tanlanadi)</option>
+                <option value="cinema">KINO · $500 dan</option>
+                <option value="quote">Shaxsiy taklif so'rash</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 · ALOQA MA'LUMOTLARI -->
+        <p class="form-section-label reveal">QADAM 04 · SIZNING MA'LUMOTLARINGIZ</p>
+        <div class="form-block reveal reveal-delay-1">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Ismingiz</label>
+              <input type="text" id="name" placeholder="Ism familiya" required>
+            </div>
+            <div class="field">
+              <label for="phone">Telefon / Telegram</label>
+              <input type="tel" id="phone" placeholder="+998 90 123 45 67" required>
+            </div>
+          </div>
+          <div class="field" style="margin-top:18px;">
+            <label for="notes">Qo'shimcha izoh / loyiha haqida qisqacha</label>
+            <textarea id="notes" placeholder="Masalan: 2 kishilik oilaviy video sessiya, Registon atrofida, 2 soat..."></textarea>
+          </div>
+        </div>
+
+        <!-- YUBORISH -->
+        <div class="reveal">
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:13px;padding:18px 30px;">
+            <i class="ti ti-calendar-event"></i> BO'SHLIKNI TEKSHIRISH & BAND QILISH
+          </button>
+          <p id="formMsg" class="form-msg"></p>
+          <p style="text-align:center;margin-top:16px;color:var(--stone-dim);font-size:12px;">
+            Shu formani yuborganingizdan keyin murojaatingizni tahlil qilib, 24 soat ichida telefon orqali bog'lanamiz. ✓ Hech qanday oldindan to'lov talab qilmaymiz.
+          </p>
+        </div>
+
       </form>
 
       <!-- TO'G'RIDAN-TO'G'RI ALOQA -->
       <div class="reveal" style="margin-top:64px;padding-top:40px;border-top:1px solid var(--line-soft);">
         <p class="form-section-label" style="margin-bottom:20px;text-align:center;">YOKI TO'G'RIDAN-TO'G'RI BOG'LANING</p>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:420px;margin:0 auto;">
-          <a href="tel:+998901234567" class="direct-contact-opt" style="padding:16px 10px;">
+          <a href="tel:+998901234567" class="service-opt" style="padding:16px 10px;">
             <i class="ti ti-phone-call" style="color:var(--gold);"></i><span class="so-name">Qo'ng'iroq</span>
           </a>
-          <a href="#" class="direct-contact-opt" style="padding:16px 10px;">
+          <a href="#" class="service-opt" style="padding:16px 10px;">
             <i class="ti ti-brand-telegram" style="color:var(--gold);"></i><span class="so-name">Telegram</span>
           </a>
-          <a href="mailto:hello@lazizbek.media" class="direct-contact-opt" style="padding:16px 10px;">
+          <a href="mailto:hello@lazizbek.media" class="service-opt" style="padding:16px 10px;">
             <i class="ti ti-mail" style="color:var(--gold);"></i><span class="so-name">Email</span>
           </a>
         </div>
@@ -229,11 +214,10 @@
 <!-- MOBILE BOTTOM NAV -->
 <nav class="mobile-bottom-nav" aria-label="Mobil navigatsiya">
   <div class="mobile-bottom-inner">
-    <button class="mbn-btn" data-link="index.html"><i class="ti ti-home"></i><span>Bosh</span></button>
     <button class="mbn-btn" data-link="index.html#works"><i class="ti ti-player-play-filled"></i><span>Ish</span></button>
     <button class="mbn-btn" data-link="index.html#services"><i class="ti ti-grid-dots"></i><span>Xizmat</span></button>
-    <button class="mbn-btn active" data-link="buyurtma.html"><i class="ti ti-calendar-event"></i><span>Band</span></button>
-    <button class="mbn-btn" data-action="menu"><i class="ti ti-menu-2"></i><span>Menu</span></button>
+    <button class="mbn-btn" data-link="haqida.html"><i class="ti ti-user"></i><span>Haqida</span></button>
+    <button class="mbn-btn active"><i class="ti ti-calendar-event"></i><span>Band</span></button>
   </div>
 </nav>
 

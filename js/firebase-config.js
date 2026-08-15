@@ -30,15 +30,11 @@ if (bookingForm) {
     const msgEl = document.querySelector('#formMsg');
     const submitBtn = bookingForm.querySelector('button[type="submit"]');
 
-    const packageEl = document.querySelector('#package');
-    const timeEl = document.querySelector('#eventTime');
     const data = {
       service: document.querySelector('#selectedService').value,
-      package: packageEl ? packageEl.value : '',
       name: document.querySelector('#name').value.trim(),
       phone: document.querySelector('#phone').value.trim(),
       date: document.querySelector('#eventDate').value,
-      time: timeEl ? timeEl.value : '',
       location: document.querySelector('#location').value.trim(),
       notes: document.querySelector('#notes').value.trim(),
       status: 'new',

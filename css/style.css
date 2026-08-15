@@ -462,11 +462,14 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
   position:relative;
   border-right:1px solid var(--line-soft);
   border-bottom:1px solid var(--line-soft);
-  padding:56px 40px;
-  min-height:260px;
+  padding:48px 28px;
+  min-height:220px;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  text-align:center;
   cursor:pointer;
   transition:background .5s var(--ease);
   overflow:hidden;
@@ -500,44 +503,40 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
 .service-card:hover .service-title{color:var(--ivory);}
 .service-card:hover .service-arrow{transform:translateX(6px);color:var(--gold);}
 
-.service-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;}
+.service-top{display:flex;justify-content:center;align-items:center;}
 .service-icon{
-  font-size:30px;
+  font-size:34px;
   color:var(--gold-dim);
   transition:all .4s var(--ease);
   line-height:1;
 }
-.service-arrow{
-  font-size:16px;
-  color:var(--stone-dim);
-  transition:all .4s var(--ease);
-  line-height:1;
+.service-arrow{display:none;}
+.service-body{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.service-num{display:none;}
+.service-title{
+  font-family:'Inter',sans-serif;
+  font-size:13px;
+  font-weight:600;
+  color:var(--ivory);
+  line-height:1.2;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:color .3s var(--ease);
+  margin-bottom:2px;
 }
-.service-body{position:relative;z-index:2;}
-.service-num{
+.service-more{
   font-family:'JetBrains Mono',monospace;
   font-size:10px;
-  letter-spacing:3px;
-  color:var(--stone-dim);
-  margin-bottom:20px;
-  display:block;
+  letter-spacing:2px;
+  color:var(--gold-dim);
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  transition:all .3s var(--ease);
 }
-.service-title{
-  font-family:'Fraunces',serif;
-  font-size:26px;
-  font-weight:500;
-  color:var(--ivory);
-  line-height:1.15;
-  letter-spacing:-0.01em;
-  transition:color .3s var(--ease);
-  margin-bottom:10px;
-}
-.service-desc{
-  font-size:13px;
-  color:var(--stone);
-  line-height:1.6;
-  margin:0;
-}
+.service-more i{font-size:11px;transition:transform .3s var(--ease);}
+.service-card:hover .service-more{color:var(--gold-light);}
+.service-card:hover .service-more i{transform:translateX(4px);}
 
 /* ---------- PORTFOLIO / SELECTED WORKS ---------- */
 .filter-bar{
@@ -596,6 +595,24 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
     grid-column:span 12;
     aspect-ratio:4/3;
   }
+}
+
+/* Uniform 3-column grid variant (homepage selected-works preview) */
+.works-grid-uniform{grid-template-columns:repeat(3,1fr);}
+.works-grid-uniform .work-card,
+.works-grid-uniform .work-card.wide,
+.works-grid-uniform .work-card.tall,
+.works-grid-uniform .work-card.wide-2,
+.works-grid-uniform .work-card.tall-2{
+  grid-column:span 1;
+  aspect-ratio:4/5;
+}
+@media(max-width:900px){
+  .works-grid-uniform{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  .works-grid-uniform{grid-template-columns:1fr;}
+  .works-grid-uniform .work-card{aspect-ratio:4/3;}
 }
 
 .work-card::after{
@@ -811,41 +828,6 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
   color:var(--stone-dim);
   opacity:0.4;
 }
-.about-signature{
-  position:absolute;
-  left:24px;bottom:20px;
-  z-index:2;
-  font-family:'Fraunces',serif;
-  font-style:italic;
-  font-weight:300;
-  font-size:30px;
-  color:var(--gold-light);
-  opacity:0.9;
-  letter-spacing:0.01em;
-}
-.about-stats-mini{
-  display:flex;
-  flex-wrap:wrap;
-  gap:32px;
-  margin:28px 0 20px;
-  padding-top:24px;
-  border-top:1px solid var(--line-soft);
-}
-.asm-item{display:flex;flex-direction:column;gap:4px;}
-.asm-num{
-  font-family:'Fraunces',serif;
-  font-size:26px;
-  font-weight:500;
-  color:var(--ivory);
-  letter-spacing:-0.01em;
-}
-.asm-label{
-  font-family:'JetBrains Mono',monospace;
-  font-size:9px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  color:var(--stone-dim);
-}
 .about-image-side::before{
   content:'';
   position:absolute;
@@ -967,34 +949,18 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
   transition:all .4s var(--ease);
 }
 .reel-card:hover .reel-fallback{
-  transform:scale(1.05);
   background:
     radial-gradient(circle at 30% 30%, rgba(212,175,55,0.25), transparent 60%),
     linear-gradient(135deg, var(--obsidian-elevated), var(--obsidian-3));
 }
-.reel-card::after{
-  content:'';
-  position:absolute;inset:0;
-  background:linear-gradient(180deg, transparent 40%, rgba(5,5,4,0.55) 100%);
-  z-index:1;
-  pointer-events:none;
+.reel-card:hover .reel-icon{opacity:1;transform:scale(1);}
+.reel-icon{
+  color:var(--gold-light);
+  font-size:26px;
+  opacity:0.5;
+  transform:scale(0.8);
+  transition:all .3s var(--ease);
 }
-.reel-play{
-  position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  z-index:2;
-  width:38px;height:38px;
-  border-radius:50%;
-  background:rgba(250,247,238,0.94);
-  color:var(--obsidian);
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;
-  padding-left:2px;
-  box-shadow:0 4px 14px rgba(5,5,4,0.4);
-  transition:transform .35s var(--ease);
-}
-.reel-card:hover .reel-play{transform:translate(-50%,-50%) scale(1.12);}
 
 /* ---------- CTA — YOUR STORY ---------- */
 .cta-section{
@@ -1144,7 +1110,7 @@ footer.main-footer{
 @media(max-width:768px){.mobile-bottom-nav{display:block;}}
 .mobile-bottom-inner{
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(4,1fr);
   gap:4px;
 }
 .mbn-btn{
@@ -1290,17 +1256,6 @@ footer.main-footer{
   text-transform:uppercase;
   font-weight:500;
 }
-.price-card .pc-icon{
-  width:44px;height:44px;
-  border-radius:50%;
-  border:1px solid var(--line);
-  background:var(--obsidian-3);
-  color:var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  font-size:18px;
-  margin-bottom:24px;
-}
-.price-card.featured .pc-icon{color:var(--gold-light);border-color:var(--gold-dim);}
 .price-card .pc-head{margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid var(--line-soft);}
 .price-card .pc-name{
   font-family:'JetBrains Mono',monospace;
@@ -1318,16 +1273,7 @@ footer.main-footer{
   color:var(--ivory);
   line-height:1;
 }
-.price-card .pc-from{
-  display:block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:10px;
-  font-weight:400;
-  letter-spacing:2px;
-  color:var(--stone-dim);
-  margin-bottom:8px;
-}
-.price-card .pc-amount span:not(.pc-from){
+.price-card .pc-amount span{
   font-family:'JetBrains Mono',monospace;
   font-size:12px;
   color:var(--stone-dim);
@@ -1414,8 +1360,7 @@ footer.main-footer{
   gap:10px;
 }
 @media(max-width:600px){.service-select{grid-template-columns:repeat(2,1fr);}}
-.service-opt,
-.direct-contact-opt{
+.service-opt{
   border:1px solid var(--line);
   background:var(--obsidian-3);
   padding:20px 14px;
@@ -1427,36 +1372,19 @@ footer.main-footer{
   align-items:center;
   gap:8px;
 }
-.service-opt:hover,
-.direct-contact-opt:hover{border-color:var(--gold-dim);background:var(--obsidian-elevated);}
+.service-opt:hover{border-color:var(--gold-dim);background:var(--obsidian-elevated);}
 .service-opt.selected{
   border-color:var(--gold);
   background:rgba(212,175,55,0.05);
   color:var(--gold-light);
 }
-.service-opt i,
-.direct-contact-opt i{font-size:22px;color:var(--gold-dim);transition:color .3s var(--ease);}
+.service-opt i{font-size:22px;color:var(--gold-dim);transition:color .3s var(--ease);}
 .service-opt.selected i{color:var(--gold);}
-.service-opt .so-name,
-.direct-contact-opt .so-name{
+.service-opt .so-name{
   font-size:12px;
   letter-spacing:1px;
   font-weight:500;
 }
-
-/* ---------- BOOKING: 2-COLUMN SPLIT LAYOUT ---------- */
-.form-wrap-wide{max-width:1100px;}
-.booking-split{
-  display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:48px;
-  align-items:start;
-}
-@media(max-width:900px){
-  .booking-split{grid-template-columns:1fr;gap:0;}
-}
-.booking-cal-sticky{position:sticky;top:100px;}
-@media(max-width:900px){.booking-cal-sticky{position:static;margin-top:12px;}}
 
 /* AVAILABILITY CALENDAR */
 .calendar-wrap{
@@ -1822,16 +1750,3 @@ footer.main-footer{
 }
 .booking-feature-list li i{color:var(--gold);font-size:16px;}
 .booking-preview-cal{border:none;background:transparent;padding:0;margin:0;}
-
-/* ---------- CUSTOM QUOTE ROW (below packages) ---------- */
-.custom-quote-row{
-  text-align:center;
-  margin-top:48px;
-  padding-top:40px;
-  border-top:1px solid var(--line-soft);
-}
-.custom-quote-row p{
-  color:var(--stone);
-  font-size:14px;
-  margin-bottom:20px;
-}
