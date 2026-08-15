@@ -3,97 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Narxlar — Lazizbek Media</title>
+<title>Packages & Pricing — Lazizbek Media</title>
+<meta name="description" content="Wedding paketlari va narxlar — Start, Pro va Cinema premium variantlari.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
 
-<nav class="nav">
+<!-- NAV -->
+<nav class="nav" id="siteNav">
   <div class="nav-inner">
-    <a href="index.html" class="logo">LAZIZBEK <span>MEDIA</span></a>
-    <div class="nav-links">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="narxlar.html" class="active">Narxlar</a>
-      <a href="haqida.html">Haqida</a>
-      <a href="buyurtma.html">Aloqa</a>
+    <a href="index.html" class="logo">
+      LAZIZBEK <span style="color:var(--gold);font-style:italic;font-weight:300;">MEDIA</span>
+      <small>FILMMAKER · SAMARKAND</small>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#works">WORK</a>
+      <a href="index.html#services">SERVICES</a>
+      <a href="haqida.html">ABOUT</a>
+      <a href="narxlar.html" class="active">PACKAGES</a>
+      <a href="buyurtma.html">CONTACT</a>
     </div>
-    <a href="buyurtma.html" class="btn btn-gold nav-cta">Buyurtma berish</a>
-    <button class="nav-toggle" aria-label="Menyu"><i class="ti ti-menu-2"></i></button>
+    <a href="buyurtma.html" class="btn btn-gold nav-cta">BOOK A DATE</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menyu"><i class="ti ti-menu-2"></i></button>
   </div>
 </nav>
 
-<header class="hero" style="min-height:45vh;padding:100px 32px 60px;">
-  <span class="eyebrow">Paketlar</span>
-  <h1 style="font-size:clamp(30px,5vw,50px);">To'y <span class="serif-italic">paketlari</span></h1>
-  <p class="lead">Har bir paket sifatga putur yetkazmasdan, byudjetingizga mos tanlanadi.</p>
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <span class="eyebrow">PACKAGES · PRICING</span>
+    <h1>Wedding <span class="italic">paketlari</span>.</h1>
+    <p class="lead">Byudjetingiz va talablaringizga mos paketni tanlang. Barcha paketlar sifatni pasaytirmasdan, zamonaviy uskunalar bilan suratga olinadi.</p>
+  </div>
 </header>
 
-<section class="section wrap" style="padding-top:20px;">
-  <div class="pricing-grid">
-    <div class="price-card reveal">
-      <h3>Start</h3>
-      <div class="amount">$150</div>
-      <ul>
-        <li><i class="ti ti-check"></i> 1 videograf</li>
-        <li><i class="ti ti-check"></i> 4 soat suratga olish</li>
-        <li><i class="ti ti-check"></i> 3–5 daqiqalik highlight</li>
-        <li><i class="ti ti-check"></i> 30 soniyalik teaser</li>
-      </ul>
-      <a href="buyurtma.html" class="btn btn-outline">Tanlash</a>
+<!-- PRICING -->
+<section class="section" style="padding-top:60px;">
+  <div class="section-wrap">
+    <div class="section-head centered reveal">
+      <span class="eyebrow"><span style="font-size:0.9em;color:var(--gold-dim);letter-spacing:2px;">01</span> &nbsp; WEDDING PACKAGES</span>
+      <h2>To'y uchun <span class="serif-italic">3 ta professional</span> variant.</h2>
     </div>
 
-    <div class="price-card featured reveal">
-      <span class="badge">Ommabop</span>
-      <h3>Pro</h3>
-      <div class="amount">$300</div>
-      <ul>
-        <li><i class="ti ti-check"></i> 2 videograf</li>
-        <li><i class="ti ti-check"></i> 8 soat suratga olish</li>
-        <li><i class="ti ti-check"></i> Drone suratga olish</li>
-        <li><i class="ti ti-check"></i> Highlight + to'liq marosim</li>
-        <li><i class="ti ti-check"></i> 1 haftada topshiriladi</li>
-      </ul>
-      <a href="buyurtma.html" class="btn btn-gold">Tanlash</a>
+    <div class="pricing-grid stagger">
+
+      <div class="price-card reveal">
+        <div class="pc-head">
+          <div class="pc-name">START · PAKET</div>
+          <div class="pc-amount">$150</div>
+        </div>
+        <ul>
+          <li><i class="ti ti-check"></i> 1 professional videograf</li>
+          <li><i class="ti ti-check"></i> 4 soat suratga olish</li>
+          <li><i class="ti ti-check"></i> 3–5 daqiqalik HIGHLIGHT FILM</li>
+          <li><i class="ti ti-check"></i> 30 soniyalik TEASER</li>
+          <li><i class="ti ti-check"></i> Full HD + color grading</li>
+          <li><i class="ti ti-check"></i> Google Drive orqali yuboriladi</li>
+          <li style="color:var(--stone-dim);"><i class="ti ti-minus" style="color:var(--stone-dim);"></i> drone · 2 videograf · full film</li>
+        </ul>
+        <a href="buyurtma.html?package=start" class="btn btn-outline">CHOOSE START</a>
+      </div>
+
+      <div class="price-card featured reveal reveal-delay-1">
+        <span class="badge">MOST POPULAR</span>
+        <div class="pc-head">
+          <div class="pc-name">PRO · PAKET</div>
+          <div class="pc-amount">$300</div>
+        </div>
+        <ul>
+          <li><i class="ti ti-check"></i> 2 professional videograf</li>
+          <li><i class="ti ti-check"></i> 8 soat suratga olish</li>
+          <li><i class="ti ti-check"></i> DRONE suratga olish</li>
+          <li><i class="ti ti-check"></i> HIGHLIGHT film + FULL MAROSIM</li>
+          <li><i class="ti ti-check"></i> 4K format + premium color</li>
+          <li><i class="ti ti-check"></i> 1 haftada topshiriladi</li>
+          <li><i class="ti ti-check"></i> Qo'shimcha drone BTS kadrlar</li>
+        </ul>
+        <a href="buyurtma.html?package=pro" class="btn btn-gold">CHOOSE PRO</a>
+      </div>
+
+      <div class="price-card reveal reveal-delay-2">
+        <div class="pc-head">
+          <div class="pc-name">CINEMA · PREMIUM</div>
+          <div class="pc-amount">$500<span>from</span></div>
+        </div>
+        <ul>
+          <li><i class="ti ti-check"></i> 3 kamera + drone + stabilizator</li>
+          <li><i class="ti ti-check"></i> TO'LIQ KUN suratga olish</li>
+          <li><i class="ti ti-check"></i> CINEMATIC wedding film (8-12 min)</li>
+          <li><i class="ti ti-check"></i> TEASER + SAME-DAY EDIT</li>
+          <li><i class="ti ti-check"></i> Premium color grading</li>
+          <li><i class="ti ti-check"></i> Audio design (shovqinli joylar, ovozlar)</li>
+          <li><i class="ti ti-check"></i> 2 haftada · 4K · DVD + drive</li>
+        </ul>
+        <a href="buyurtma.html?package=cinema" class="btn btn-outline">CHOOSE CINEMA</a>
+      </div>
+
     </div>
 
-    <div class="price-card reveal">
-      <h3>Cinema</h3>
-      <div class="amount">$500<span>dan</span></div>
-      <ul>
-        <li><i class="ti ti-check"></i> 3 kamera + drone</li>
-        <li><i class="ti ti-check"></i> To'liq kun suratga olish</li>
-        <li><i class="ti ti-check"></i> Cinematic wedding film</li>
-        <li><i class="ti ti-check"></i> Same-day teaser</li>
-        <li><i class="ti ti-check"></i> Premium color grading</li>
-      </ul>
-      <a href="buyurtma.html" class="btn btn-outline">Tanlash</a>
+    <div style="text-align:center;margin-top:56px;">
+      <p class="mono" style="color:var(--stone-dim);letter-spacing:2px;">GRADUATION · LOVE STORY · EVENT · COMMERCIAL</p>
+      <p style="margin-top:12px;max-width:560px;margin-left:auto;margin-right:auto;">
+        Boshqa xizmat turlariga (bitiruv, tadbir, reklama, video sessiya) doir narxlar loyihaga qarab belgilanadi — tez orada aniq taklif olish uchun quyidagi tugmani bosing.
+      </p>
+      <div style="margin-top:28px;">
+        <a href="buyurtma.html" class="btn btn-outline">REQUEST A QUOTE <i class="ti ti-arrow-right"></i></a>
+      </div>
     </div>
   </div>
-
-  <p style="text-align:center;margin-top:40px;font-size:13px;color:var(--stone-dim);">
-    Bitiruv, video sessiya va reklama xizmatlari uchun narxlar loyihaga qarab belgilanadi — <a href="buyurtma.html" style="color:var(--gold-light);">so'rov yuboring</a>.
-  </p>
 </section>
 
-<footer>
-  <div class="wrap footer-inner">
-    <a href="index.html" class="logo">LAZIZBEK <span>MEDIA</span></a>
-    <div class="footer-links">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="narxlar.html">Narxlar</a>
-      <a href="haqida.html">Haqida</a>
-      <a href="buyurtma.html">Aloqa</a>
+<!-- TIMECODE DIVIDER -->
+<div class="timecode" aria-hidden="true">
+  <span class="code">00:00:00:00</span>
+  <span class="rule"></span>
+  <span class="code highlight">WHAT'S INCLUDED</span>
+  <span class="rule"></span>
+  <span class="code">00:01:12:05</span>
+</div>
+
+<!-- INCLUDES STRIP -->
+<section class="section" style="padding-top:40px;">
+  <div class="section-wrap">
+    <div class="section-head centered reveal">
+      <span class="eyebrow">BARCHA PAKETLARGA KIRADI</span>
+      <h2>Har bir loyihaga <span class="serif-italic">kiritiladigan</span> narsalar.</h2>
     </div>
-    <div class="social">
-      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-      <a href="#" aria-label="Telegram"><i class="ti ti-brand-telegram"></i></a>
-      <a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+
+    <div class="services-grid stagger" style="border-color:var(--line-soft);">
+      <div class="service-card reveal" style="cursor:default;">
+        <div class="service-top"><i class="ti ti-device-cctv service-icon"></i></div>
+        <div class="service-body">
+          <span class="service-num">INCLUDED · 01</span>
+          <h3 class="service-title">Professional 4K</h3>
+          <p class="service-desc">To'liq kadrli kameralar, prime linzalar va zamonaviy stabilizatorlar bilan.</p>
+        </div>
+      </div>
+      <div class="service-card reveal" style="cursor:default;">
+        <div class="service-top"><i class="ti ti-palette service-icon"></i></div>
+        <div class="service-body">
+          <span class="service-num">INCLUDED · 02</span>
+          <h3 class="service-title">Color Grading</h3>
+          <p class="service-desc">Premium kinematik rang ko'rgazma — har bir kadr alohida tozalanadi.</p>
+        </div>
+      </div>
+      <div class="service-card reveal" style="cursor:default;">
+        <div class="service-top"><i class="ti ti-music service-icon"></i></div>
+        <div class="service-body">
+          <span class="service-num">INCLUDED · 03</span>
+          <h3 class="service-title">Audio & Music</h3>
+          <p class="service-desc">Professional musiqalar va toza, miksovka qilingan ovozlar bilan.</p>
+        </div>
+      </div>
+      <div class="service-card reveal" style="cursor:default;">
+        <div class="service-top"><i class="ti ti-cloud service-icon"></i></div>
+        <div class="service-body">
+          <span class="service-num">INCLUDED · 04</span>
+          <h3 class="service-title">Cloud Delivery</h3>
+          <p class="service-desc">Google Drive yoki YouTube orqali tezkor, cheksiz yuklash.</p>
+        </div>
+      </div>
     </div>
   </div>
-  <p class="copyright">© 2026 Lazizbek Media. Barcha huquqlar himoyalangan.</p>
+</section>
+
+<!-- CTA -->
+<section class="cta-section project-next-cta">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="cta-content">
+    <span class="eyebrow cta-eyebrow">READY TO BOOK?</span>
+    <h1 class="cta-text">
+      To'g'ri paketni <span class="italic">tanlab,</span><br>
+      <span class="italic" style="font-weight:500;color:var(--gold-light);">sanani band qiling.</span>
+    </h1>
+    <a href="buyurtma.html" class="btn btn-gold">CHECK AVAILABILITY <i class="ti ti-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-big">
+          <span class="word-1">LAZIZBEK</span>
+          <span class="word-2">MEDIA</span>
+        </div>
+        <p>Filmmaker · Videographer · Storyteller. Samarqand, O'zbekiston.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Telegram"><i class="ti ti-brand-telegram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#works">Work</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="haqida.html">About</a></li>
+          <li><a href="narxlar.html">Packages</a></li>
+          <li><a href="buyurtma.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="portfolio.html?cat=wedding">Wedding</a></li>
+          <li><a href="portfolio.html?cat=graduation">Graduation</a></li>
+          <li><a href="portfolio.html?cat=loveStory">Love Story</a></li>
+          <li><a href="portfolio.html?cat=event">Events</a></li>
+          <li><a href="portfolio.html?cat=commercial">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <div class="contact-line"><i class="ti ti-map-pin"></i> Samarqand, UZB</div>
+        <div class="contact-line"><i class="ti ti-phone"></i> +998 90 123 45 67</div>
+        <div class="contact-line"><i class="ti ti-brand-telegram"></i> @lazizbekmedia</div>
+        <div class="contact-line"><i class="ti ti-mail"></i> hello@lazizbek.media</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 LAZIZBEK MEDIA · ALL RIGHTS RESERVED</p>
+      <p class="mono" style="color:var(--stone-dim);font-size:10px;letter-spacing:2px;">SAMARKAND · UZBEKISTAN</p>
+    </div>
+  </div>
 </footer>
 
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+  <div class="mobile-bottom-inner">
+    <button class="mbn-btn" data-link="index.html#works"><i class="ti ti-player-play-filled"></i><span>Work</span></button>
+    <button class="mbn-btn" data-link="index.html#services"><i class="ti ti-grid-dots"></i><span>Services</span></button>
+    <button class="mbn-btn" data-link="haqida.html"><i class="ti ti-user"></i><span>About</span></button>
+    <button class="mbn-btn active" data-link="buyurtma.html"><i class="ti ti-calendar-event"></i><span>Book</span></button>
+  </div>
+</nav>
+
+<!-- FLOATING BOOK NOW -->
+<a href="buyurtma.html" class="floating-book" aria-label="Book now">
+  <span class="btn btn-gold"><i class="ti ti-calendar-time"></i> BOOK NOW</span>
+</a>
+
 <script src="js/main.js"></script>
+<script>
+  // ?package= URL dan package select uchun
+  document.addEventListener('DOMContentLoaded', () => {
+    const p = new URLSearchParams(window.location.search).get('package');
+    if (p) {
+      sessionStorage.setItem('pkg', p);
+    }
+  });
+</script>
 </body>
 </html>

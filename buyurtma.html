@@ -3,102 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buyurtma berish — Lazizbek Media</title>
+<title>Book a Session — Lazizbek Media</title>
+<meta name="description" content="Loyiha bron qilish — sana, xizmat va paketni tanlang, biz 24 soat ichida aloqaga chiqamiz.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
 
-<nav class="nav">
+<!-- NAV -->
+<nav class="nav" id="siteNav">
   <div class="nav-inner">
-    <a href="index.html" class="logo">LAZIZBEK <span>MEDIA</span></a>
-    <div class="nav-links">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="narxlar.html">Narxlar</a>
-      <a href="haqida.html">Haqida</a>
-      <a href="buyurtma.html" class="active">Aloqa</a>
+    <a href="index.html" class="logo">
+      LAZIZBEK <span style="color:var(--gold);font-style:italic;font-weight:300;">MEDIA</span>
+      <small>FILMMAKER · SAMARKAND</small>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#works">WORK</a>
+      <a href="index.html#services">SERVICES</a>
+      <a href="haqida.html">ABOUT</a>
+      <a href="narxlar.html">PACKAGES</a>
+      <a href="buyurtma.html" class="active">CONTACT</a>
     </div>
-    <a href="buyurtma.html" class="btn btn-gold nav-cta">Buyurtma berish</a>
-    <button class="nav-toggle" aria-label="Menyu"><i class="ti ti-menu-2"></i></button>
+    <a href="buyurtma.html" class="btn btn-gold nav-cta">BOOK A DATE</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menyu"><i class="ti ti-menu-2"></i></button>
   </div>
 </nav>
 
-<header class="hero" style="min-height:35vh;padding:100px 32px 40px;">
-  <span class="eyebrow">Aloqa</span>
-  <h1 style="font-size:clamp(30px,5vw,50px);">Keling, birga <span class="serif-italic">yarataylik</span></h1>
-  <p class="lead">Quyidagi formani to'ldiring — 24 soat ichida siz bilan bog'lanamiz.</p>
+<!-- PAGE HEADER -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <span class="eyebrow">BOOKING · CONTACT</span>
+    <h1>Let's create <span class="italic">something beautiful</span>.</h1>
+    <p class="lead">Quyidagi formani to'ldiring — men 24 soat ichida siz bilan Telegram yoki telefon orqali aloqaga chiqaman va loyihangiz uchun aniq taklif beraman.</p>
+  </div>
 </header>
 
-<section class="section wrap" style="padding-top:0;">
-  <form id="bookingForm" class="form-wrap">
-    <label style="font-size:12px;color:var(--stone);letter-spacing:0.5px;display:block;margin-bottom:12px;">Sizga qanday xizmat kerak?</label>
-    <input type="hidden" id="selectedService" required>
-    <div class="service-select">
-      <div class="service-opt" data-value="wedding"><i class="ti ti-heart-handshake"></i>To'y</div>
-      <div class="service-opt" data-value="graduation"><i class="ti ti-school"></i>Bitiruv</div>
-      <div class="service-opt" data-value="loveStory"><i class="ti ti-camera-heart"></i>Love story</div>
-      <div class="service-opt" data-value="session"><i class="ti ti-camera"></i>Video sessiya</div>
-      <div class="service-opt" data-value="event"><i class="ti ti-confetti"></i>Tadbir</div>
-      <div class="service-opt" data-value="commercial"><i class="ti ti-building-skyscraper"></i>Reklama</div>
-    </div>
+<!-- BOOKING FORM -->
+<section class="section" style="padding-top:60px;">
+  <div class="section-wrap">
+    <div class="form-wrap">
 
-    <div class="form-row">
-      <div class="field">
-        <label for="name">Ismingiz</label>
-        <input type="text" id="name" placeholder="Ismingizni kiriting" required>
+      <form id="bookingForm" novalidate>
+        <input type="hidden" id="selectedService" required>
+        <input type="hidden" id="selectedPackage">
+
+        <!-- STEP 1 · SERVICE TYPE -->
+        <p class="form-section-label reveal">STEP 01 · WHAT DO YOU NEED?</p>
+        <div class="form-block reveal reveal-delay-1">
+          <div class="service-select stagger">
+            <div class="service-opt" data-value="wedding"><i class="ti ti-heart-handshake"></i><span class="so-name">Wedding</span></div>
+            <div class="service-opt" data-value="graduation"><i class="ti ti-school"></i><span class="so-name">Graduation</span></div>
+            <div class="service-opt" data-value="loveStory"><i class="ti ti-camera-heart"></i><span class="so-name">Love Story</span></div>
+            <div class="service-opt" data-value="event"><i class="ti ti-confetti"></i><span class="so-name">Event</span></div>
+            <div class="service-opt" data-value="commercial"><i class="ti ti-building-skyscraper"></i><span class="so-name">Commercial</span></div>
+            <div class="service-opt" data-value="other"><i class="ti ti-sparkles"></i><span class="so-name">Other</span></div>
+          </div>
+        </div>
+
+        <!-- STEP 2 · AVAILABILITY CALENDAR -->
+        <p class="form-section-label reveal">STEP 02 · YOUR DATE</p>
+        <div class="calendar-wrap reveal reveal-delay-1">
+          <div class="calendar-head">
+            <div class="calendar-month">Loading…</div>
+            <div class="calendar-navs">
+              <button type="button" class="calendar-nav-btn cal-prev" aria-label="Previous month"><i class="ti ti-chevron-left"></i></button>
+              <button type="button" class="calendar-nav-btn cal-next" aria-label="Next month"><i class="ti ti-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="calendar-legend">
+            <div class="legend-item"><span class="legend-dot legend-avail"></span> Available</div>
+            <div class="legend-item"><span class="legend-dot legend-limited"></span> Limited</div>
+            <div class="legend-item"><span class="legend-dot legend-booked"></span> Booked</div>
+          </div>
+          <div class="calendar-grid" id="calGridArea"></div>
+          <div style="margin-top:20px;">
+            <div class="field">
+              <label for="eventDate">Yoki sanani qo'lda kiriting (YYYY-MM-DD)</label>
+              <input type="date" id="eventDate">
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3 · PACKAGE + LOCATION -->
+        <p class="form-section-label reveal" style="margin-top:28px;">STEP 03 · LOCATION & PACKAGE</p>
+        <div class="form-block reveal reveal-delay-1">
+          <div class="form-row">
+            <div class="field">
+              <label for="location">Joylashuv</label>
+              <input type="text" id="location" placeholder="Samarqand · Registon" value="Samarkand">
+            </div>
+            <div class="field">
+              <label for="package">Paket (ixtiyoriy)</label>
+              <select id="package">
+                <option value="">— Tanlamang</option>
+                <option value="start">START · $150</option>
+                <option value="pro">PRO · $300 (Most popular)</option>
+                <option value="cinema">CINEMA · $500 from</option>
+                <option value="quote">Request a custom quote</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 4 · CONTACT INFO -->
+        <p class="form-section-label reveal">STEP 04 · YOUR DETAILS</p>
+        <div class="form-block reveal reveal-delay-1">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Ismingiz</label>
+              <input type="text" id="name" placeholder="Ism familiya" required>
+            </div>
+            <div class="field">
+              <label for="phone">Telefon / Telegram</label>
+              <input type="tel" id="phone" placeholder="+998 90 123 45 67" required>
+            </div>
+          </div>
+          <div class="field" style="margin-top:18px;">
+            <label for="notes">Qo'shimcha izoh / loyiha haqida qisqacha</label>
+            <textarea id="notes" placeholder="Masalan: 2 kishilik oilaviy video sessiya, Registon atrofida, 2 soat..."></textarea>
+          </div>
+        </div>
+
+        <!-- SUBMIT -->
+        <div class="reveal">
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;font-size:13px;padding:18px 30px;">
+            <i class="ti ti-calendar-event"></i> CHECK AVAILABILITY & BOOK
+          </button>
+          <p id="formMsg" class="form-msg"></p>
+          <p style="text-align:center;margin-top:16px;color:var(--stone-dim);font-size:12px;">
+            Shu formani yuborganingizdan keyin murojaatingizni tahlil qilib, 24 soat ichida telefon orqali bog'lanamiz. ✓ Hech qanday oldindan to'lov talab qilmaymiz.
+          </p>
+        </div>
+
+      </form>
+
+      <!-- DIRECT CONTACTS -->
+      <div class="reveal" style="margin-top:64px;padding-top:40px;border-top:1px solid var(--line-soft);">
+        <p class="form-section-label" style="margin-bottom:20px;text-align:center;">OR REACH OUT DIRECTLY</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:420px;margin:0 auto;">
+          <a href="tel:+998901234567" class="service-opt" style="padding:16px 10px;">
+            <i class="ti ti-phone-call" style="color:var(--gold);"></i><span class="so-name">Call</span>
+          </a>
+          <a href="#" class="service-opt" style="padding:16px 10px;">
+            <i class="ti ti-brand-telegram" style="color:var(--gold);"></i><span class="so-name">Telegram</span>
+          </a>
+          <a href="mailto:hello@lazizbek.media" class="service-opt" style="padding:16px 10px;">
+            <i class="ti ti-mail" style="color:var(--gold);"></i><span class="so-name">Email</span>
+          </a>
+        </div>
       </div>
-      <div class="field">
-        <label for="phone">Telefon / Telegram</label>
-        <input type="text" id="phone" placeholder="+998 90 123 45 67" required>
-      </div>
-    </div>
 
-    <div class="form-row">
-      <div class="field">
-        <label for="eventDate">Tadbir sanasi</label>
-        <input type="date" id="eventDate" required>
-      </div>
-      <div class="field">
-        <label for="location">Joylashuv</label>
-        <input type="text" id="location" placeholder="Samarqand">
-      </div>
-    </div>
-
-    <div class="field" style="margin-bottom:24px;">
-      <label for="notes">Qo'shimcha izoh</label>
-      <textarea id="notes" placeholder="Loyihangiz haqida qisqacha yozing..."></textarea>
-    </div>
-
-    <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;">So'rov yuborish</button>
-    <p id="formMsg" class="form-msg"></p>
-  </form>
-
-  <div style="text-align:center;margin-top:56px;padding-top:40px;border-top:1px solid var(--line-soft);">
-    <p style="font-size:13px;">Yoki to'g'ridan-to'g'ri yozing</p>
-    <div class="social" style="justify-content:center;margin-top:16px;">
-      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-      <a href="#" aria-label="Telegram"><i class="ti ti-brand-telegram"></i></a>
-      <a href="tel:+998901234567" aria-label="Telefon"><i class="ti ti-phone"></i></a>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap footer-inner">
-    <a href="index.html" class="logo">LAZIZBEK <span>MEDIA</span></a>
-    <div class="footer-links">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="narxlar.html">Narxlar</a>
-      <a href="haqida.html">Haqida</a>
-      <a href="buyurtma.html">Aloqa</a>
+<!-- FOOTER -->
+<footer class="main-footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-big">
+          <span class="word-1">LAZIZBEK</span>
+          <span class="word-2">MEDIA</span>
+        </div>
+        <p>Filmmaker · Videographer · Storyteller. Samarqand, O'zbekiston.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Telegram"><i class="ti ti-brand-telegram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#works">Work</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="haqida.html">About</a></li>
+          <li><a href="narxlar.html">Packages</a></li>
+          <li><a href="buyurtma.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="portfolio.html?cat=wedding">Wedding</a></li>
+          <li><a href="portfolio.html?cat=graduation">Graduation</a></li>
+          <li><a href="portfolio.html?cat=loveStory">Love Story</a></li>
+          <li><a href="portfolio.html?cat=event">Events</a></li>
+          <li><a href="portfolio.html?cat=commercial">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <div class="contact-line"><i class="ti ti-map-pin"></i> Samarqand, UZB</div>
+        <div class="contact-line"><i class="ti ti-phone"></i> +998 90 123 45 67</div>
+        <div class="contact-line"><i class="ti ti-brand-telegram"></i> @lazizbekmedia</div>
+        <div class="contact-line"><i class="ti ti-mail"></i> hello@lazizbek.media</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 LAZIZBEK MEDIA · ALL RIGHTS RESERVED</p>
+      <p class="mono" style="color:var(--stone-dim);font-size:10px;letter-spacing:2px;">SAMARKAND · UZBEKISTAN</p>
     </div>
   </div>
-  <p class="copyright">© 2026 Lazizbek Media. Barcha huquqlar himoyalangan.</p>
 </footer>
 
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+  <div class="mobile-bottom-inner">
+    <button class="mbn-btn" data-link="index.html#works"><i class="ti ti-player-play-filled"></i><span>Work</span></button>
+    <button class="mbn-btn" data-link="index.html#services"><i class="ti ti-grid-dots"></i><span>Services</span></button>
+    <button class="mbn-btn" data-link="haqida.html"><i class="ti ti-user"></i><span>About</span></button>
+    <button class="mbn-btn active"><i class="ti ti-calendar-event"></i><span>Book</span></button>
+  </div>
+</nav>
+
+<!-- FLOATING BOOK NOW (hidden on booking page) -->
+<a href="buyurtma.html" class="floating-book" aria-label="Book now" style="display:none !important;"></a>
+
+<!-- Firebase + Booking logic -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script src="js/firebase-config.js"></script>
 <script src="js/main.js"></script>
+<script>
+  // Auto-select package from narxlar.html
+  (function autoPick(){
+    try {
+      const p = sessionStorage.getItem('pkg') || new URLSearchParams(location.search).get('package');
+      if (p && document.getElementById('package')) {
+        const sel = document.getElementById('package');
+        for (let opt of sel.options) {
+          if (opt.value === p) { sel.value = p; break; }
+        }
+      }
+    } catch(e) {}
+  })();
+</script>
 </body>
 </html>

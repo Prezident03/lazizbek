@@ -3,150 +3,488 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lazizbek Media — Filmmaker &amp; Videographer</title>
-<meta name="description" content="Lazizbek Media — to'y, bitiruv, video sessiya va tadbir videolari. Har bir lahzangizni filmga aylantiramiz.">
+<title>Lazizbek Media — Filmmaker · Videographer · Storyteller</title>
+<meta name="description" content="Lazizbek Media — to'y, bitiruv, love story va tadbir videolarini kinematik uslubda suratga olamiz. Samarqand, O'zbekiston.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 </head>
 <body>
 
-<nav class="nav">
+<!-- NAV -->
+<nav class="nav" id="siteNav">
   <div class="nav-inner">
-    <a href="index.html" class="logo">LAZIZBEK <span>MEDIA</span></a>
-    <div class="nav-links">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="narxlar.html">Narxlar</a>
-      <a href="haqida.html">Haqida</a>
-      <a href="buyurtma.html">Aloqa</a>
+    <a href="index.html" class="logo">
+      LAZIZBEK <span style="color:var(--gold);font-style:italic;font-weight:300;">MEDIA</span>
+      <small>FILMMAKER · SAMARKAND</small>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#works">WORK</a>
+      <a href="#services">SERVICES</a>
+      <a href="haqida.html">ABOUT</a>
+      <a href="narxlar.html">PACKAGES</a>
+      <a href="buyurtma.html">CONTACT</a>
     </div>
-    <a href="buyurtma.html" class="btn btn-gold nav-cta">Buyurtma berish</a>
-    <button class="nav-toggle" aria-label="Menyu"><i class="ti ti-menu-2"></i></button>
+    <a href="buyurtma.html" class="btn btn-gold nav-cta">BOOK A DATE</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menyu"><i class="ti ti-menu-2"></i></button>
   </div>
 </nav>
 
-<header class="hero">
-  <span class="eyebrow">Filmmaker · Videographer · Storyteller</span>
-  <h1>Har bir lahzangizni <span class="serif-italic">filmga</span> aylantiramiz</h1>
-  <p class="lead">Samarqandda to'y, bitiruv, video sessiya va tadbir videolarini kinematik uslubda suratga olamiz — his-tuyg'ular yo'qolmaydi, faqat qayta ko'riladi.</p>
-  <div class="hero-actions">
-    <a href="portfolio.html" class="btn btn-gold"><i class="ti ti-player-play"></i> Ishlarni ko'rish</a>
-    <a href="buyurtma.html" class="btn btn-outline">Sana band qilish</a>
+<!-- HERO — VIDEO SHOWREEL -->
+<section class="hero-video">
+  <div class="hero-poster" aria-hidden="true"></div>
+  <video class="hero-video-bg" muted loop playsinline autoplay poster="" preload="metadata">
+  </video>
+  <div class="hero-video-overlay" aria-hidden="true"></div>
+  <div class="hero-video-content">
+    <p class="hero-tagline">We turn your moments into stories.</p>
+    <h1 class="hero-title">
+      <span class="word-1">LAZIZBEK</span>
+      <span class="word-2">MEDIA</span>
+    </h1>
+    <p class="hero-sub">Cinematic wedding films, graduation stories and event videos from Samarkand. We don't just record — we capture how it felt.</p>
+    <div class="hero-actions">
+      <a href="#works" class="btn btn-gold"><i class="ti ti-player-play-filled"></i> WATCH SHOWREEL</a>
+      <a href="buyurtma.html" class="btn btn-outline">BOOK A SESSION</a>
+    </div>
   </div>
-</header>
-
-<section class="services">
-  <a href="portfolio.html?cat=wedding" class="service-card">
-    <i class="ti ti-heart-handshake"></i>
-    <h3>To'y</h3>
-    <p>Wedding film, teaser va to'liq video</p>
-  </a>
-  <a href="portfolio.html?cat=graduation" class="service-card">
-    <i class="ti ti-school"></i>
-    <h3>Bitiruv</h3>
-    <p>Maktab va universitet bitiruvi</p>
-  </a>
-  <a href="portfolio.html?cat=session" class="service-card">
-    <i class="ti ti-camera"></i>
-    <h3>Video sessiya</h3>
-    <p>Individual, couple va oilaviy</p>
-  </a>
-  <a href="portfolio.html?cat=commercial" class="service-card">
-    <i class="ti ti-building-skyscraper"></i>
-    <h3>Reklama</h3>
-    <p>Biznes va mahsulot videolari</p>
-  </a>
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <span class="mono">SCROLL</span>
+    <div class="line"></div>
+  </div>
 </section>
 
-<div class="timecode wrap">
+<!-- TIMECODE DIVIDER -->
+<div class="timecode" aria-hidden="true">
   <span class="code">00:00:00:00</span>
   <span class="rule"></span>
-  <span class="code">SELECTED WORKS</span>
+  <span class="code highlight">SELECTED STORIES</span>
   <span class="rule"></span>
-  <span class="code">00:03:41:12</span>
+  <span class="code">00:04:27:18</span>
 </div>
 
-<section class="section wrap">
-  <div class="section-head">
-    <span class="eyebrow">Portfolio</span>
-    <h2 class="reveal">Tanlangan ishlar</h2>
-  </div>
-  <div class="portfolio-grid">
-    <a href="portfolio.html" class="pf-card reveal" data-category="wedding">
-      <div class="pf-play"><i class="ti ti-player-play"></i></div>
-      <div class="pf-overlay">
-        <span class="cat">Wedding film</span>
-        <h3>Aziz &amp; Madina</h3>
-        <span class="yr">2026</span>
-      </div>
-    </a>
-    <a href="portfolio.html" class="pf-card reveal" data-category="graduation">
-      <div class="pf-play"><i class="ti ti-player-play"></i></div>
-      <div class="pf-overlay">
-        <span class="cat">Graduation film</span>
-        <h3>11-A sinf</h3>
-        <span class="yr">2026</span>
-      </div>
-    </a>
-    <a href="portfolio.html" class="pf-card reveal" data-category="loveStory">
-      <div class="pf-play"><i class="ti ti-player-play"></i></div>
-      <div class="pf-overlay">
-        <span class="cat">Love story</span>
-        <h3>Jasur &amp; Dilnoza</h3>
-        <span class="yr">2026</span>
-      </div>
-    </a>
-  </div>
-  <div style="text-align:center;margin-top:48px;">
-    <a href="portfolio.html" class="btn btn-outline">Barcha ishlarni ko'rish</a>
-  </div>
-</section>
-
-<section class="stats">
-  <div class="stat">
-    <div class="num">5+</div>
-    <div class="lbl">YIL TAJRIBA</div>
-  </div>
-  <div class="stat">
-    <div class="num">200+</div>
-    <div class="lbl">TUGALLANGAN LOYIHA</div>
-  </div>
-  <div class="stat">
-    <div class="num">150+</div>
-    <div class="lbl">MAMNUN MIJOZ</div>
-  </div>
-</section>
-
-<section class="section wrap">
-  <div class="testimonial reveal">
-    <p class="quote">"Lazizbek bizning to'yimizni oddiy video emas, haqiqiy filmga aylantirdi. Har safar ko'rganimizda o'sha kunni qayta his qilamiz."</p>
-    <div class="author">Aziz &amp; Madina</div>
-    <div class="role">Wedding film, 2026</div>
-  </div>
-</section>
-
-<section class="footer-cta">
-  <span class="eyebrow">Boshlaylik</span>
-  <h2 class="reveal">Sizning hikoyangiz <span class="serif-italic">filmga</span> aylanishga arziydi.</h2>
-  <a href="buyurtma.html" class="btn btn-gold">Loyihani boshlash</a>
-</section>
-
-<footer>
-  <div class="wrap footer-inner">
-    <a href="index.html" class="logo">LAZIZBEK <span>MEDIA</span></a>
-    <div class="footer-links">
-      <a href="portfolio.html">Portfolio</a>
-      <a href="narxlar.html">Narxlar</a>
-      <a href="haqida.html">Haqida</a>
-      <a href="buyurtma.html">Aloqa</a>
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="num">01</span> What we do</span>
+      <h2>Our <span class="serif-italic">services</span>.</h2>
+      <p>Har bir xizmat turiga xos professional yondashuv — jismoniy jihozlar, tajriba va ish stili bilan.</p>
     </div>
-    <div class="social">
-      <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
-      <a href="#" aria-label="Telegram"><i class="ti ti-brand-telegram"></i></a>
-      <a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+
+    <div class="services-grid stagger" id="servicesGrid">
+      <a href="portfolio.html?cat=wedding" class="service-card reveal">
+        <div class="service-top">
+          <i class="ti ti-heart-handshake service-icon"></i>
+          <i class="ti ti-arrow-up-right service-arrow"></i>
+        </div>
+        <div class="service-body">
+          <span class="service-num">SERVICE · 01</span>
+          <h3 class="service-title">Wedding</h3>
+          <p class="service-desc">To'y videolari — teaser, highlight va to'liq kinematik film.</p>
+        </div>
+      </a>
+      <a href="portfolio.html?cat=graduation" class="service-card reveal">
+        <div class="service-top">
+          <i class="ti ti-school service-icon"></i>
+          <i class="ti ti-arrow-up-right service-arrow"></i>
+        </div>
+        <div class="service-body">
+          <span class="service-num">SERVICE · 02</span>
+          <h3 class="service-title">Graduation</h3>
+          <p class="service-desc">Maktab va universitet bitiruv tadbirlari video hikoyalari.</p>
+        </div>
+      </a>
+      <a href="portfolio.html?cat=loveStory" class="service-card reveal">
+        <div class="service-top">
+          <i class="ti ti-camera-heart service-icon"></i>
+          <i class="ti ti-arrow-up-right service-arrow"></i>
+        </div>
+        <div class="service-body">
+          <span class="service-num">SERVICE · 03</span>
+          <h3 class="service-title">Love Story</h3>
+          <p class="service-desc">Couple va pre-wedding sessiyalar — sizning o'zingizdagi hikoya.</p>
+        </div>
+      </a>
+      <a href="portfolio.html?cat=event" class="service-card reveal">
+        <div class="service-top">
+          <i class="ti ti-confetti service-icon"></i>
+          <i class="ti ti-arrow-up-right service-arrow"></i>
+        </div>
+        <div class="service-body">
+          <span class="service-num">SERVICE · 04</span>
+          <h3 class="service-title">Events</h3>
+          <p class="service-desc">Konsert, bayram, korporativ va boshqa turdagi tadbirlar.</p>
+        </div>
+      </a>
+      <a href="portfolio.html?cat=session" class="service-card reveal">
+        <div class="service-top">
+          <i class="ti ti-camera-movie service-icon"></i>
+          <i class="ti ti-arrow-up-right service-arrow"></i>
+        </div>
+        <div class="service-body">
+          <span class="service-num">SERVICE · 05</span>
+          <h3 class="service-title">Video Session</h3>
+          <p class="service-desc">Individual, oilaviy va juftlik video sessiyalari.</p>
+        </div>
+      </a>
+      <a href="portfolio.html?cat=commercial" class="service-card reveal">
+        <div class="service-top">
+          <i class="ti ti-building-skyscraper service-icon"></i>
+          <i class="ti ti-arrow-up-right service-arrow"></i>
+        </div>
+        <div class="service-body">
+          <span class="service-num">SERVICE · 06</span>
+          <h3 class="service-title">Commercial</h3>
+          <p class="service-desc">Biznes, brend va mahsulot reklamasi videolari.</p>
+        </div>
+      </a>
+      <a href="buyurtma.html" class="service-card reveal">
+        <div class="service-top">
+          <i class="ti ti-sparkles service-icon"></i>
+          <i class="ti ti-arrow-up-right service-arrow"></i>
+        </div>
+        <div class="service-body">
+          <span class="service-num">SERVICE · 07</span>
+          <h3 class="service-title">Intro & Motion</h3>
+          <p class="service-desc">To'y, bitiruv va tadbirlar uchun animatsion intro videolar.</p>
+        </div>
+      </a>
+      <a href="buyurtma.html" class="service-card reveal">
+        <div class="service-top">
+          <i class="ti ti-clapperboard service-icon"></i>
+          <i class="ti ti-arrow-up-right service-arrow"></i>
+        </div>
+        <div class="service-body">
+          <span class="service-num">SERVICE · 08</span>
+          <h3 class="service-title">Same-Day Edit</h3>
+          <p class="service-desc">Tadbir davomida tayyorlanadigan tezkor teaser va montaj.</p>
+        </div>
+      </a>
     </div>
   </div>
-  <p class="copyright">© 2026 Lazizbek Media. Barcha huquqlar himoyalangan.</p>
+</section>
+
+<!-- TIMECODE DIVIDER -->
+<div class="timecode" aria-hidden="true">
+  <span class="code">00:00:28:14</span>
+  <span class="rule"></span>
+  <span class="code highlight">SELECTED WORKS</span>
+  <span class="rule"></span>
+  <span class="code">00:02:55:03</span>
+</div>
+
+<!-- SELECTED WORKS / PORTFOLIO -->
+<section class="section" id="works">
+  <div class="section-wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"><span class="num">02</span> Selected works</span>
+      <h2>Tanlangan <span class="serif-italic">ishlar</span>.</h2>
+      <p>Bu yerdan har bir loyiha o'zining o'zi bilan — hikoya, kadrlar va hislar bilan tanishing.</p>
+    </div>
+
+    <div class="works-grid stagger" id="worksGrid">
+      <a href="project.html" class="work-card wide reveal">
+        <div class="work-visual">
+          <div class="fallback-bg" style="background:radial-gradient(ellipse at 30% 20%, rgba(212,175,55,0.2), transparent 60%), linear-gradient(135deg,#1a1408,#050504);"></div>
+        </div>
+        <div class="play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="work-overlay">
+          <div class="work-cat"><span class="dot"></span> WEDDING FILM</div>
+          <h3 class="work-title">Aziz & Madina</h3>
+          <div class="work-meta">
+            <span class="work-loc"><i class="ti ti-map-pin" style="margin-right:4px;"></i>SAMARKAND</span>
+            <span class="work-year">2026</span>
+          </div>
+        </div>
+      </a>
+      <a href="project.html" class="work-card tall reveal">
+        <div class="work-visual">
+          <div class="fallback-bg" style="background:radial-gradient(ellipse at 70% 30%, rgba(180,100,60,0.2), transparent 60%), linear-gradient(135deg,#1a0e08,#050504);"></div>
+        </div>
+        <div class="play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="work-overlay">
+          <div class="work-cat"><span class="dot"></span> GRADUATION FILM</div>
+          <h3 class="work-title">11-A Sinf</h3>
+          <div class="work-meta">
+            <span class="work-loc">SCHOOL №12</span>
+            <span class="work-year">2026</span>
+          </div>
+        </div>
+      </a>
+      <a href="project.html" class="work-card tall-2 reveal">
+        <div class="work-visual">
+          <div class="fallback-bg" style="background:radial-gradient(ellipse at 40% 60%, rgba(160,60,90,0.2), transparent 60%), linear-gradient(135deg,#1a0b10,#050504);"></div>
+        </div>
+        <div class="play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="work-overlay">
+          <div class="work-cat"><span class="dot"></span> LOVE STORY</div>
+          <h3 class="work-title">Jasur & Dilnoza</h3>
+          <div class="work-meta">
+            <span class="work-loc">REGISTAN</span>
+            <span class="work-year">2026</span>
+          </div>
+        </div>
+      </a>
+      <a href="project.html" class="work-card wide-2 reveal">
+        <div class="work-visual">
+          <div class="fallback-bg" style="background:radial-gradient(ellipse at 60% 40%, rgba(90,130,190,0.2), transparent 60%), linear-gradient(135deg,#0c101a,#050504);"></div>
+        </div>
+        <div class="play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="work-overlay">
+          <div class="work-cat"><span class="dot"></span> COMMERCIAL</div>
+          <h3 class="work-title">Osiyo Cafe</h3>
+          <div class="work-meta">
+            <span class="work-loc">BRAND FILM</span>
+            <span class="work-year">2025</span>
+          </div>
+        </div>
+      </a>
+      <a href="project.html" class="work-card wide reveal">
+        <div class="work-visual">
+          <div class="fallback-bg" style="background:radial-gradient(ellipse at 20% 80%, rgba(212,175,55,0.18), transparent 60%), linear-gradient(135deg,#161308,#050504);"></div>
+        </div>
+        <div class="play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="work-overlay">
+          <div class="work-cat"><span class="dot"></span> EVENT</div>
+          <h3 class="work-title">Navro'z Bayrami</h3>
+          <div class="work-meta">
+            <span class="work-loc">SQUARE</span>
+            <span class="work-year">2026</span>
+          </div>
+        </div>
+      </a>
+      <a href="project.html" class="work-card tall reveal">
+        <div class="work-visual">
+          <div class="fallback-bg" style="background:radial-gradient(ellipse at 80% 70%, rgba(140,70,120,0.2), transparent 60%), linear-gradient(135deg,#180c16,#050504);"></div>
+        </div>
+        <div class="play-btn"><i class="ti ti-player-play-filled"></i></div>
+        <div class="work-overlay">
+          <div class="work-cat"><span class="dot"></span> WEDDING FILM</div>
+          <h3 class="work-title">Sardor & Nilufar</h3>
+          <div class="work-meta">
+            <span class="work-loc">SAMARKAND</span>
+            <span class="work-year">2025</span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="view-all-row reveal">
+      <a href="portfolio.html" class="btn btn-outline">VIEW ALL WORKS <i class="ti ti-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- TIMECODE DIVIDER -->
+<div class="timecode" aria-hidden="true">
+  <span class="code">00:00:49:06</span>
+  <span class="rule"></span>
+  <span class="code highlight">ABOUT THE STUDIO</span>
+  <span class="rule"></span>
+  <span class="code">00:01:33:11</span>
+</div>
+
+<!-- ABOUT / INTRO -->
+<section class="section" id="about-intro">
+  <div class="section-wrap">
+    <div class="about-split">
+      <div class="about-image-side reveal">
+        <div class="portrait-frame">
+          <div class="portrait-placeholder">
+            <i class="ti ti-user"></i>
+          </div>
+        </div>
+      </div>
+      <div class="about-bio reveal reveal-delay-2">
+        <span class="eyebrow"><span class="num">03</span> The filmmaker</span>
+        <p class="about-quote"><span class="q">"</span>I don't just record events.<br>I capture how they felt.<span class="q">"</span></p>
+        <p>Men Lazizbek — 5 yildan ortiq tajribaga ega videoman. Samarqand shahrida yashayman va har kuni yangi hikoyalar yaratishni sevaman.</p>
+        <p>Har bir loyihada bitta maqsad bor — o'sha tadbirni yillar o'tgandan keyin ham, xuddi shu his bilan qayta ko'rish imkonini berish. Sun'iy poza emas, tabiiy lahzalar.</p>
+        <p style="margin-top:32px;">
+          <a href="haqida.html" class="btn btn-outline">READ FULL STORY <i class="ti ti-arrow-right"></i></a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-strip">
+  <div class="stat-cell reveal">
+    <div class="stat-num">5<span style="font-size:0.5em;color:var(--gold-dim);">+</span></div>
+    <div class="stat-line"></div>
+    <div class="stat-label">Years experience</div>
+    <p class="stat-desc">Kinematik video istudio bo'yicha amaliy tajriba.</p>
+  </div>
+  <div class="stat-cell reveal reveal-delay-1">
+    <div class="stat-num">200<span style="font-size:0.5em;color:var(--gold-dim);">+</span></div>
+    <div class="stat-line"></div>
+    <div class="stat-label">Projects done</div>
+    <p class="stat-desc">To'y, bitiruv, tadbir va reklama loyihalari.</p>
+  </div>
+  <div class="stat-cell reveal reveal-delay-2">
+    <div class="stat-num">150<span style="font-size:0.5em;color:var(--gold-dim);">+</span></div>
+    <div class="stat-line"></div>
+    <div class="stat-label">Happy clients</div>
+    <p class="stat-desc">Har bir loyiha — o'zining mamnun mijozlari bilan.</p>
+  </div>
+  <div class="stat-cell reveal reveal-delay-3">
+    <div class="stat-num">4K<span style="font-size:0.5em;color:var(--gold-dim);"></span></div>
+    <div class="stat-line"></div>
+    <div class="stat-label">Production</div>
+    <p class="stat-desc">Professional kameralar, drone va stabilizatorlar.</p>
+  </div>
+</section>
+
+<!-- TIMECODE DIVIDER -->
+<div class="timecode" aria-hidden="true">
+  <span class="code">00:01:48:22</span>
+  <span class="rule"></span>
+  <span class="code highlight">WHAT CLIENTS SAY</span>
+  <span class="rule"></span>
+  <span class="code">00:02:14:07</span>
+</div>
+
+<!-- REVIEWS -->
+<section class="section">
+  <div class="section-wrap">
+    <div class="section-head centered reveal">
+      <span class="eyebrow"><span class="num">04</span> Testimonials</span>
+      <h2>Mijozlar <span class="serif-italic">nima deydi</span>.</h2>
+    </div>
+
+    <div class="reviews-wrap">
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Lazizbek bizning to'yimizni oddiy video emas, haqiqiy filmga aylantirdi. Har safar ko'rganimizda o'sha kunni qayta his qilamiz. Jamoasi bilan birga juda ham professional ishladi."</p>
+        <div class="review-author">
+          <div class="review-author-avatar"><i class="ti ti-heart"></i></div>
+          <div>
+            <div class="review-author-name">Aziz & Madina</div>
+            <div class="review-author-role">Wedding Film · Samarkand · 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM REELS -->
+<section class="section" id="reels" style="padding-top:40px;">
+  <div class="section-wrap">
+    <div class="section-head centered reveal">
+      <span class="eyebrow"><span class="num">05</span> Daily content</span>
+      <h2>Follow the <span class="serif-italic">journey</span>.</h2>
+      <p>Instagram'da har kuni yangi kadrlar, BTS va qisqa videolar bilan — <strong style="color:var(--ivory);">@lazizbek.media</strong></p>
+    </div>
+
+    <div class="reels-grid stagger" id="reelsGrid">
+      <a href="#" class="reel-card reveal">
+        <div class="reel-fallback"><i class="ti ti-brand-instagram reel-icon"></i></div>
+      </a>
+      <a href="#" class="reel-card reveal">
+        <div class="reel-fallback"><i class="ti ti-brand-instagram reel-icon"></i></div>
+      </a>
+      <a href="#" class="reel-card reveal">
+        <div class="reel-fallback"><i class="ti ti-brand-instagram reel-icon"></i></div>
+      </a>
+      <a href="#" class="reel-card reveal">
+        <div class="reel-fallback"><i class="ti ti-brand-instagram reel-icon"></i></div>
+      </a>
+      <a href="#" class="reel-card reveal">
+        <div class="reel-fallback"><i class="ti ti-brand-instagram reel-icon"></i></div>
+      </a>
+      <a href="#" class="reel-card reveal">
+        <div class="reel-fallback"><i class="ti ti-brand-instagram reel-icon"></i></div>
+      </a>
+    </div>
+
+    <div class="view-all-row reveal">
+      <a href="#" class="btn btn-ghost">OPEN INSTAGRAM <i class="ti ti-external-link" style="margin-left:8px;font-size:12px;"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — YOUR STORY -->
+<section class="cta-section" id="ctaBook">
+  <div class="cta-bg" aria-hidden="true"></div>
+  <div class="cta-content">
+    <span class="eyebrow cta-eyebrow"><span class="num">06</span> Let's start</span>
+    <h1 class="cta-text">
+      Your story<br>
+      <span class="italic">deserves to be a</span><br>
+      <span class="italic" style="font-weight:500;color:var(--gold-light);">film.</span>
+    </h1>
+    <a href="buyurtma.html" class="btn btn-gold">START YOUR PROJECT <i class="ti ti-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+  <div class="footer-wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-big">
+          <span class="word-1">LAZIZBEK</span>
+          <span class="word-2">MEDIA</span>
+        </div>
+        <p>Filmmaker · Videographer · Storyteller. Samarqand, O'zbekiston. Biz sizning lahzalaringizni hikoyaga aylantiramiz.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i class="ti ti-brand-instagram"></i></a>
+          <a href="#" aria-label="Telegram"><i class="ti ti-brand-telegram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="ti ti-brand-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="ti ti-brand-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#works">Work</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="haqida.html">About</a></li>
+          <li><a href="narxlar.html">Packages</a></li>
+          <li><a href="buyurtma.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="portfolio.html?cat=wedding">Wedding</a></li>
+          <li><a href="portfolio.html?cat=graduation">Graduation</a></li>
+          <li><a href="portfolio.html?cat=loveStory">Love Story</a></li>
+          <li><a href="portfolio.html?cat=event">Events</a></li>
+          <li><a href="portfolio.html?cat=commercial">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <div class="contact-line"><i class="ti ti-map-pin"></i> Samarqand, UZB</div>
+        <div class="contact-line"><i class="ti ti-phone"></i> +998 90 123 45 67</div>
+        <div class="contact-line"><i class="ti ti-brand-telegram"></i> @lazizbekmedia</div>
+        <div class="contact-line"><i class="ti ti-mail"></i> hello@lazizbek.media</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="copyright">© 2026 LAZIZBEK MEDIA · ALL RIGHTS RESERVED</p>
+      <p class="mono" style="color:var(--stone-dim);font-size:10px;letter-spacing:2px;">SAMARKAND · UZBEKISTAN</p>
+    </div>
+  </div>
 </footer>
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+  <div class="mobile-bottom-inner">
+    <button class="mbn-btn" data-link="#works"><i class="ti ti-player-play-filled"></i><span>Work</span></button>
+    <button class="mbn-btn" data-link="#services"><i class="ti ti-grid-dots"></i><span>Services</span></button>
+    <button class="mbn-btn" data-link="haqida.html"><i class="ti ti-user"></i><span>About</span></button>
+    <button class="mbn-btn" data-link="buyurtma.html"><i class="ti ti-calendar-event"></i><span>Book</span></button>
+  </div>
+</nav>
+
+<!-- FLOATING BOOK NOW -->
+<a href="buyurtma.html" class="floating-book" aria-label="Book now">
+  <span class="btn btn-gold"><i class="ti ti-calendar-time"></i> BOOK NOW</span>
+</a>
 
 <script src="js/main.js"></script>
 </body>
