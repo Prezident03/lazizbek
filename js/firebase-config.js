@@ -16,7 +16,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 // ==========================================================
-// BOOKING FORM -> FIRESTORE
+// BUYURTMA FORMASI -> FIRESTORE
 // "bookings" collection'iga yangi hujjat qo'shadi.
 // Firestore Console'da bookings papkasini ochib, kelgan
 // so'rovlarni shu yerdan ko'rasiz.
@@ -63,7 +63,7 @@ if (bookingForm) {
       showMsg('Xatolik yuz berdi. Qaytadan urinib ko\'ring yoki Telegram orqali yozing.', 'error');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'So\'rov yuborish';
+      submitBtn.innerHTML = '<i class="ti ti-calendar-event"></i> BO\'SHLIKNI TEKSHIRISH & BAND QILISH';
     }
 
     function showMsg(text, type) {

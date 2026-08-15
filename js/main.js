@@ -232,3 +232,41 @@ if (serviceOpts.length) {
     render();
   });
 })();
+
+// ====== REVIEWS: MOBILE DOT CAROUSEL SYNC ======
+(function initReviewDots() {
+  const track = document.getElementById('reviewsTrack');
+  const dotsWrap = document.getElementById('reviewDots');
+  if (!track || !dotsWrap) return;
+  const dots = Array.from(dotsWrap.querySelectorAll('.review-dot'));
+  const cards = Array.from(track.children);
+  if (!dots.length || !cards.length) return;
+
+  function setActive(idx) {
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+
+  let scrollTimeout;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const trackCenter = track.scrollLeft + track.clientWidth / 2;
+      let closest = 0, closestDist = Infinity;
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const dist = Math.abs(cardCenter - trackCenter);
+        if (dist < closestDist) { closestDist = dist; closest = i; }
+      });
+      setActive(closest);
+    }, 80);
+  }, { passive: true });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const card = cards[i];
+      if (card) {
+        track.scrollTo({ left: card.offsetLeft - (track.clientWidth - card.offsetWidth) / 2, behavior: 'smooth' });
+      }
+    });
+  });
+})();
