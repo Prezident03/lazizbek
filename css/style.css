@@ -622,35 +622,44 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
 .work-card .play-btn{
   position:absolute;
   top:50%;left:50%;
-  transform:translate(-50%,-50%) scale(0.8);
+  transform:translate(-50%,-50%) scale(0.7);
   z-index:3;
-  width:72px;height:72px;
+  width:64px;height:64px;
   border-radius:50%;
-  border:1px solid rgba(240,213,133,0.5);
-  background:rgba(5,5,4,0.4);
-  backdrop-filter:blur(6px);
-  color:var(--gold-light);
+  border:1px solid rgba(245,240,225,0.9);
+  background:rgba(250,247,238,0.96);
+  box-shadow:0 8px 24px rgba(5,5,4,0.45), 0 0 0 1px rgba(212,175,55,0.15);
+  color:var(--obsidian);
   display:flex;align-items:center;justify-content:center;
-  font-size:22px;
+  font-size:19px;
   opacity:0;
-  transition:all .5s var(--ease);
-  padding-left:4px;
+  transition:opacity .45s var(--ease), transform .45s var(--ease), background .3s var(--ease);
+  padding-left:3px;
 }
 .work-card:hover .play-btn{
   opacity:1;
   transform:translate(-50%,-50%) scale(1);
 }
+.work-card .play-btn:hover{
+  background:var(--gold-light);
+  transform:translate(-50%,-50%) scale(1.08);
+}
 .work-card .play-btn::before{
   content:'';
   position:absolute;
-  inset:-6px;
+  inset:-9px;
   border-radius:50%;
-  border:1px solid rgba(240,213,133,0.15);
-  animation:playRing 2.5s ease-out infinite;
+  border:1px solid rgba(250,247,238,0.35);
+  opacity:0;
+  transition:opacity .4s var(--ease);
+}
+.work-card:hover .play-btn::before{
+  opacity:1;
+  animation:playRing 2.2s ease-out infinite;
 }
 @keyframes playRing{
   0%{transform:scale(1);opacity:0.6;}
-  100%{transform:scale(1.4);opacity:0;}
+  100%{transform:scale(1.35);opacity:0;}
 }
 
 .work-overlay{
