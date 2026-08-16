@@ -1659,6 +1659,11 @@ footer.main-footer{
   grid-template-columns:repeat(7,1fr);
   gap:4px;
 }
+@media(max-width:400px){
+  .calendar-grid{gap:3px;}
+  .cal-day{font-size:13px;}
+  .cal-dow{font-size:9px;padding:6px 0;}
+}
 .cal-dow{
   font-family:'JetBrains Mono',monospace;
   font-size:10px;
