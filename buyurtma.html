@@ -2,7 +2,7 @@
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Buyurtma berish — Lazizbek Media</title>
 <meta name="description" content="Loyiha bron qilish — sana, xizmat va paketni tanlang, biz 24 soat ichida aloqaga chiqamiz.">
 <link rel="stylesheet" href="css/style.css">
@@ -211,18 +211,15 @@
   </div>
 </footer>
 
-<!-- MOBILE BOTTOM NAV -->
+<!-- MOBILE APP TAB BAR -->
 <nav class="mobile-bottom-nav" aria-label="Mobil navigatsiya">
   <div class="mobile-bottom-inner">
-    <button class="mbn-btn" data-link="index.html#works"><i class="ti ti-player-play-filled"></i><span>Ish</span></button>
-    <button class="mbn-btn" data-link="index.html#services"><i class="ti ti-grid-dots"></i><span>Xizmat</span></button>
-    <button class="mbn-btn" data-link="haqida.html"><i class="ti ti-user"></i><span>Haqida</span></button>
-    <button class="mbn-btn active"><i class="ti ti-calendar-event"></i><span>Band</span></button>
+    <a href="index.html" class="mbn-btn" data-tab="home"><i class="ti ti-home"></i><span>Bosh</span></a>
+    <a href="index.html#works" class="mbn-btn" data-tab="works"><i class="ti ti-player-play-filled"></i><span>Ish</span></a>
+    <a href="index.html#services" class="mbn-btn" data-tab="services"><i class="ti ti-grid-dots"></i><span>Xizmat</span></a>
+    <a href="buyurtma.html" class="mbn-btn active" data-tab="contact"><i class="ti ti-calendar-event"></i><span>Aloqa</span></a>
   </div>
 </nav>
-
-<!-- FLOATING BOOK NOW (buyurtma sahifasida yashirilgan) -->
-<a href="buyurtma.html" class="floating-book" aria-label="Band qilish" style="display:none !important;"></a>
 
 <!-- Firebase + Buyurtma mantig'i -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
