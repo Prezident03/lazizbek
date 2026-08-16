@@ -316,3 +316,14 @@ if (serviceOpts.length) {
     });
   });
 })();
+
+// SERVICES FILMSTRIP — allow mouse-wheel to scroll horizontally on desktop
+(() => {
+  const grid = document.getElementById('servicesGrid');
+  if (!grid) return;
+  grid.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+    e.preventDefault();
+    grid.scrollLeft += e.deltaY;
+  }, { passive: false });
+})();

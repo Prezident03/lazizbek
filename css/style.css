@@ -523,14 +523,35 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
 .section-head.centered p{margin-left:auto;margin-right:auto;}
 
 /* ---------- SERVICES (photo cards) ---------- */
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
+.services-scroll-wrap{position:relative;}
+.services-scroll-wrap::before,
+.services-scroll-wrap::after{
+  content:'';
+  position:absolute;top:0;bottom:0;
+  width:60px;z-index:5;
+  pointer-events:none;
 }
-@media(max-width:1024px){.services-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:600px){.services-grid{grid-template-columns:1fr;gap:14px;}}
+.services-scroll-wrap::before{
+  left:0;
+  background:linear-gradient(90deg, var(--obsidian) 0%, transparent 100%);
+}
+.services-scroll-wrap::after{
+  right:0;
+  background:linear-gradient(270deg, var(--obsidian) 0%, transparent 100%);
+}
+@media(max-width:600px){.services-scroll-wrap::before,.services-scroll-wrap::after{width:28px;}}
 
+.services-grid{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-padding-left:0;
+  padding-bottom:20px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.services-grid::-webkit-scrollbar{display:none;}
 .service-card{
   position:relative;
   aspect-ratio:3/4;
@@ -541,9 +562,24 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
   background:var(--obsidian-2);
   display:block;
   transition:border-color .4s var(--ease);
+  flex:0 0 auto;
+  width:min(78vw,300px);
+  scroll-snap-align:start;
 }
 .service-card:hover{border-color:var(--gold-dim);}
-@media(max-width:600px){.service-card{aspect-ratio:16/11;}}
+@media(min-width:1024px){.service-card{width:300px;}}
+@media(max-width:600px){.services-grid{gap:14px;}}
+
+.services-scroll-hint{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:18px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--stone-dim);
+}
+.services-scroll-hint .rule{width:32px;height:1px;background:var(--line);}
 
 .service-card-media{position:absolute;inset:0;z-index:1;}
 .service-card-media img{
