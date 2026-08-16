@@ -54,7 +54,20 @@ loginForm.addEventListener('submit', async (e) => {
   try {
     await auth.signInWithEmailAndPassword(email, password);
   } catch (err) {
-    loginError.textContent = 'Email yoki parol noto\'g\'ri.';
+    console.error(err);
+    if (err.code === 'auth/invalid-api-key' || err.code === 'auth/api-key-not-valid') {
+      loginError.textContent = "Firebase konfiguratsiyasi noto'g'ri (js/firebase-config.js). Haqiqiy apiKey/projectId qo'yilganini tekshiring.";
+    } else if (err.code === 'auth/user-not-found') {
+      loginError.textContent = "Bunday email bilan foydalanuvchi topilmadi. Firebase Console > Authentication > Users'da yaratilganini tekshiring.";
+    } else if (err.code === 'auth/wrong-password' || err.code === 'auth/invalid-credential') {
+      loginError.textContent = "Parol noto'g'ri.";
+    } else if (err.code === 'auth/operation-not-allowed') {
+      loginError.textContent = "Email/Password kirish usuli Firebase'da yoqilmagan (Authentication > Sign-in method).";
+    } else if (err.code === 'auth/network-request-failed') {
+      loginError.textContent = "Internet aloqasi yo'q yoki Firebase domeni bloklangan.";
+    } else {
+      loginError.textContent = `Xatolik: ${err.code || err.message || 'nomalum xato'}`;
+    }
     loginError.classList.add('show');
   } finally {
     loginBtn.disabled = false;
