@@ -1296,15 +1296,19 @@ footer.main-footer{
   backdrop-filter:blur(20px);
   -webkit-backdrop-filter:blur(20px);
   border-top:1px solid var(--line-soft);
-  padding:10px 8px 12px;
+  padding:10px 8px calc(10px + env(safe-area-inset-bottom));
 }
-@media(max-width:768px){.mobile-bottom-nav{display:block;}}
+@media(max-width:768px){
+  .mobile-bottom-nav{display:block;}
+  body{padding-bottom:calc(70px + env(safe-area-inset-bottom));}
+}
 .mobile-bottom-inner{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:4px;
 }
 .mbn-btn{
+  position:relative;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -1314,31 +1318,27 @@ footer.main-footer{
   color:var(--stone);
   background:transparent;
   border:none;
+  text-decoration:none;
   cursor:pointer;
   transition:color .3s var(--ease);
 }
 .mbn-btn.active,
 .mbn-btn:hover{color:var(--gold-light);}
-.mbn-btn i{font-size:20px;line-height:1;}
+.mbn-btn.active::before{
+  content:'';
+  position:absolute;top:-10px;left:50%;
+  width:18px;height:2px;
+  background:var(--gold);
+  border-radius:2px;
+  transform:translateX(-50%);
+}
+.mbn-btn i{font-size:20px;line-height:1;transition:transform .3s var(--ease);}
+.mbn-btn.active i{transform:translateY(-2px);}
 .mbn-btn span{
   font-family:'JetBrains Mono',monospace;
   font-size:9px;
   letter-spacing:1px;
   text-transform:uppercase;
-}
-
-/* ---------- BOOK NOW floating ---------- */
-.floating-book{
-  position:fixed;
-  bottom:90px;right:20px;
-  z-index:998;
-  display:none;
-}
-@media(max-width:768px){.floating-book{display:block;}}
-.floating-book .btn{
-  padding:14px 22px;
-  font-size:11px;
-  box-shadow:0 10px 30px -10px rgba(212,175,55,0.5);
 }
 
 /* ---------- Reveal animation ---------- */
