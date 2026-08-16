@@ -331,6 +331,48 @@ if (serviceOpts.length) {
     e.preventDefault();
     grid.scrollLeft += e.deltaY;
   }, { passive: false });
+
+  // Prev/Next arrow buttons
+  const prevBtn = document.getElementById('servicesPrev');
+  const nextBtn = document.getElementById('servicesNext');
+  function cardStep() {
+    const card = grid.querySelector('.service-card');
+    return card ? card.getBoundingClientRect().width + 20 : grid.clientWidth * 0.8;
+  }
+  function updateArrows() {
+    if (!prevBtn || !nextBtn) return;
+    const max = grid.scrollWidth - grid.clientWidth - 4;
+    prevBtn.disabled = grid.scrollLeft <= 4;
+    nextBtn.disabled = grid.scrollLeft >= max;
+  }
+  if (prevBtn) prevBtn.addEventListener('click', () => grid.scrollBy({ left: -cardStep(), behavior: 'smooth' }));
+  if (nextBtn) nextBtn.addEventListener('click', () => grid.scrollBy({ left: cardStep(), behavior: 'smooth' }));
+  grid.addEventListener('scroll', updateArrows, { passive: true });
+  window.addEventListener('resize', updateArrows);
+  updateArrows();
+
+  // Click-and-drag to scroll (desktop mouse)
+  let isDown = false, startX = 0, startScroll = 0, dragged = false;
+  grid.addEventListener('mousedown', (e) => {
+    isDown = true; dragged = false;
+    startX = e.pageX;
+    startScroll = grid.scrollLeft;
+    grid.classList.add('dragging');
+  });
+  window.addEventListener('mouseup', () => {
+    isDown = false;
+    grid.classList.remove('dragging');
+  });
+  window.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    const dx = e.pageX - startX;
+    if (Math.abs(dx) > 4) dragged = true;
+    grid.scrollLeft = startScroll - dx;
+  });
+  // Prevent a card link from firing right after a drag
+  grid.querySelectorAll('a.service-card').forEach(a => {
+    a.addEventListener('click', (e) => { if (dragged) { e.preventDefault(); dragged = false; } });
+  });
 })();
 
 // MOBILE APP TAB BAR — active state (scroll-spy on home, static on other pages)

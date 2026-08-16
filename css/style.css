@@ -379,8 +379,8 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
     position:relative;
     inset:auto;
     width:100%;
-    height:48vh;
-    min-height:340px;
+    height:40vh;
+    min-height:280px;
     flex-shrink:0;
     overflow:hidden;
     container-type:size;
@@ -400,14 +400,11 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
     z-index:3;
     max-width:none;
     background:var(--obsidian);
-    padding:40px 24px 60px;
+    padding:28px 24px 32px;
   }
-  .hero-scroll-hint{
-    position:static;
-    align-items:center;
-    margin:8px auto 0;
-    left:auto;bottom:auto;
-  }
+  .hero-tagline-small{margin-bottom:14px;}
+  .hero-sub-left{margin:14px 0 22px;}
+  .hero-actions-left{margin-bottom:20px;}
 }
 .hero-tagline-small{
   font-family:'JetBrains Mono',monospace;
@@ -549,7 +546,14 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
   animation:fadeUp 1s var(--ease) 1.2s forwards;
   opacity:0;
 }
-@media(max-width:768px){.hero-scroll-hint{left:24px;}}
+@media(max-width:768px){
+  .hero-scroll-hint{
+    position:static;
+    left:auto;bottom:auto;
+    align-items:center;
+    margin:4px auto 24px;
+  }
+}
 .hero-scroll-hint .line{
   width:1px;
   height:60px;
@@ -633,6 +637,37 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
 
 /* ---------- SERVICES (photo cards) ---------- */
 .services-scroll-wrap{position:relative;}
+.services-nav-btn{
+  display:none;
+  position:absolute;
+  top:40%;
+  transform:translateY(-50%);
+  z-index:6;
+  width:44px;height:44px;
+  border-radius:50%;
+  border:1px solid var(--line-soft);
+  background:rgba(5,5,4,0.85);
+  backdrop-filter:blur(8px);
+  color:var(--ivory);
+  font-size:18px;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:all .3s var(--ease);
+}
+.services-nav-btn:hover{border-color:var(--gold);color:var(--gold-light);background:var(--obsidian-elevated);}
+.services-nav-btn.prev{left:-4px;}
+.services-nav-btn.next{right:-4px;}
+.services-nav-btn:disabled{opacity:0;pointer-events:none;}
+@media(min-width:601px){
+  .services-nav-btn{display:flex;}
+}
+@media(min-width:1024px){
+  .services-nav-btn.prev{left:-22px;}
+  .services-nav-btn.next{right:-22px;}
+}
+.services-grid.dragging{cursor:grabbing;scroll-snap-type:none;user-select:none;}
+@media(min-width:601px){#servicesGrid{cursor:grab;}}
 
 .services-grid{
   display:grid;
