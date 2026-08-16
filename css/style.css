@@ -191,12 +191,12 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
 }
 .logo-img{
   display:block;
-  height:34px;
+  height:56px;
   width:auto;
   max-width:none;
 }
 @media(max-width:480px){
-  .logo-img{height:26px;}
+  .logo-img{height:40px;}
 }
 .logo small{
   font-family:'JetBrains Mono',monospace;
