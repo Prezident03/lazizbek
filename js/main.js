@@ -431,3 +431,61 @@ if (serviceOpts.length) {
   setTimeout(() => setActive(hashTab()), 60);
   window.addEventListener('hashchange', () => setActive(hashTab()));
 })();
+
+// FIRST-TOUCH ENTRANCE EFFECT — vibration + synthesized cinematic whoosh
+// (Browsers block autoplay sound and, on iOS, vibration entirely before any
+// user gesture — this fires on the very first tap/click/scroll instead,
+// which is the closest allowed approximation of an "on open" effect.)
+(() => {
+  let fired = false;
+  function entranceEffect() {
+    if (fired) return;
+    fired = true;
+
+    // Vibration (Android Chrome only — silently does nothing elsewhere)
+    if (navigator.vibrate) {
+      navigator.vibrate([30, 40, 60]);
+    }
+
+    // Synthesized cinematic "whoosh" — no audio file needed
+    try {
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      const ctx = new Ctx();
+      const now = ctx.currentTime;
+
+      // Low sweeping tone
+      const osc = ctx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(220, now);
+      osc.frequency.exponentialRampToValueAtTime(55, now + 0.5);
+
+      // Filtered noise burst for "air" texture
+      const bufferSize = ctx.sampleRate * 0.5;
+      const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / bufferSize);
+      const noise = ctx.createBufferSource();
+      noise.buffer = noiseBuffer;
+      const noiseFilter = ctx.createBiquadFilter();
+      noiseFilter.type = 'bandpass';
+      noiseFilter.frequency.value = 800;
+
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(0.25, now + 0.05);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.55);
+
+      osc.connect(gain);
+      noise.connect(noiseFilter).connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(now); osc.stop(now + 0.55);
+      noise.start(now); noise.stop(now + 0.55);
+    } catch (e) { /* Web Audio unsupported — fail silently */ }
+
+    window.removeEventListener('pointerdown', entranceEffect);
+    window.removeEventListener('scroll', entranceEffect);
+  }
+  window.addEventListener('pointerdown', entranceEffect, { once: true, passive: true });
+  window.addEventListener('scroll', entranceEffect, { once: true, passive: true });
+})();
