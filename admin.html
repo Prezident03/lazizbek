@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin panel — Lazizbek Media</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+</head>
+<body class="admin-body">
+
+<!-- LOGIN SCREEN -->
+<div class="admin-login-wrap" id="adminLoginWrap">
+  <form class="admin-login-card" id="adminLoginForm">
+    <div class="logo" style="margin-bottom:8px;">
+      LAZIZBEK <span style="color:var(--gold);font-style:italic;font-weight:300;">MEDIA</span>
+      <small>ADMIN PANEL</small>
+    </div>
+    <p class="mono" style="color:var(--stone-dim);font-size:11px;letter-spacing:2px;margin-bottom:32px;">FAQAT XODIMLAR UCHUN</p>
+
+    <label class="admin-label">Email</label>
+    <input type="email" id="adminEmail" class="admin-input" placeholder="admin@lazizbek.media" required autocomplete="username">
+
+    <label class="admin-label">Parol</label>
+    <input type="password" id="adminPassword" class="admin-input" placeholder="••••••••" required autocomplete="current-password">
+
+    <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:20px;" id="loginBtn">KIRISH</button>
+    <p class="admin-error" id="loginError"></p>
+  </form>
+</div>
+
+<!-- ADMIN PANEL (login qilingandan keyin ko'rinadi) -->
+<div class="admin-panel" id="adminPanel" style="display:none;">
+  <header class="admin-header">
+    <div class="logo">
+      LAZIZBEK <span style="color:var(--gold);font-style:italic;font-weight:300;">MEDIA</span>
+      <small>ADMIN PANEL</small>
+    </div>
+    <div class="admin-header-actions">
+      <a href="index.html" target="_blank" class="btn btn-outline btn-sm"><i class="ti ti-external-link"></i> SAYTNI KO'RISH</a>
+      <button type="button" class="btn btn-ghost btn-sm" id="logoutBtn"><i class="ti ti-logout"></i> CHIQISH</button>
+    </div>
+  </header>
+
+  <div class="admin-body-inner">
+    <div class="admin-toolbar">
+      <h2>Loyihalar <span class="serif-italic">(portfolio)</span></h2>
+      <button type="button" class="btn btn-gold btn-sm" id="newProjectBtn"><i class="ti ti-plus"></i> YANGI LOYIHA</button>
+    </div>
+
+    <div class="admin-projects-list" id="adminProjectsList">
+      <p class="mono" style="color:var(--stone-dim);">Yuklanmoqda...</p>
+    </div>
+  </div>
+</div>
+
+<!-- ADD/EDIT PROJECT MODAL -->
+<div class="admin-modal" id="adminModal" aria-hidden="true">
+  <div class="admin-modal-inner">
+    <div class="admin-modal-head">
+      <h3 id="modalTitle">Yangi loyiha qo'shish</h3>
+      <button type="button" class="admin-modal-close" id="modalClose" aria-label="Yopish"><i class="ti ti-x"></i></button>
+    </div>
+
+    <form id="projectForm" class="admin-form">
+      <input type="hidden" id="projectId">
+
+      <div class="admin-form-row">
+        <div class="admin-form-col">
+          <label class="admin-label">Nomi (mijoz/juftlik) *</label>
+          <input type="text" id="fTitle" class="admin-input" placeholder="Aziz va Madina" required>
+        </div>
+        <div class="admin-form-col">
+          <label class="admin-label">Kategoriya *</label>
+          <select id="fCategoryKey" class="admin-input" required>
+            <option value="">Tanlang...</option>
+            <option value="wedding" data-label="To'y filmi">To'y</option>
+            <option value="graduation" data-label="Bitiruv filmi">Bitiruv</option>
+            <option value="loveStory" data-label="Sevgi hikoyasi">Sevgi hikoyasi</option>
+            <option value="event" data-label="Tadbir filmi">Tadbirlar</option>
+            <option value="commercial" data-label="Reklama">Reklama</option>
+            <option value="session" data-label="Video sessiya">Video sessiya</option>
+            <option value="other" data-label="Boshqa">Boshqa</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="admin-form-row">
+        <div class="admin-form-col">
+          <label class="admin-label">Kategoriya yorlig'i (ko'rinadigan matn)</label>
+          <input type="text" id="fCategoryLabel" class="admin-input" placeholder="To'y filmi">
+        </div>
+        <div class="admin-form-col">
+          <label class="admin-label">Davomiyligi (ixtiyoriy)</label>
+          <input type="text" id="fDuration" class="admin-input" placeholder="6-8 daqiqa">
+        </div>
+      </div>
+
+      <div class="admin-form-row">
+        <div class="admin-form-col">
+          <label class="admin-label">Joylashuv</label>
+          <input type="text" id="fLocation" class="admin-input" placeholder="Samarqand">
+        </div>
+        <div class="admin-form-col">
+          <label class="admin-label">Yil</label>
+          <input type="text" id="fYear" class="admin-input" placeholder="2026">
+        </div>
+      </div>
+
+      <label class="admin-label">Muqova rasm havolasi (URL)</label>
+      <input type="url" id="fCoverImage" class="admin-input" placeholder="https://...">
+
+      <label class="admin-label">Video havolasi (YouTube yoki Vimeo link)</label>
+      <input type="url" id="fVideoUrl" class="admin-input" placeholder="https://www.youtube.com/watch?v=... yoki https://vimeo.com/...">
+      <p class="admin-hint">Oddiy YouTube yoki Vimeo havolasini shu yerga joylang — o'zi to'g'ri formatga o'giriladi. Xuddi YouTube'ga video yuklab, linkni ulashgandek.</p>
+
+      <label class="admin-label">Hikoya matni</label>
+      <textarea id="fStoryText" class="admin-input admin-textarea" rows="3" placeholder="Ularning kuni sevgi, kulgi va umrbod qoladigan lahzalarga to'la edi..."></textarea>
+
+      <label class="admin-label">Film haqida qisqa matn</label>
+      <textarea id="fFilmText" class="admin-input admin-textarea" rows="2" placeholder="To'liq kinematik filmni tomosha qiling va kunlarini qayta his qiling."></textarea>
+
+      <label class="admin-label">Kadr ortidagi rasmlar (har birini yangi qatorga, ixtiyoriy)</label>
+      <textarea id="fBehindPhotos" class="admin-input admin-textarea" rows="3" placeholder="https://rasm1.jpg
+https://rasm2.jpg"></textarea>
+
+      <div class="admin-form-row" style="align-items:center;">
+        <label class="admin-checkbox-row">
+          <input type="checkbox" id="fFeatured" checked>
+          <span>Bosh sahifada ham ko'rsatilsin</span>
+        </label>
+        <div class="admin-form-col">
+          <label class="admin-label">Tartib raqami</label>
+          <input type="number" id="fOrder" class="admin-input" value="0">
+        </div>
+      </div>
+
+      <p class="admin-error" id="formError"></p>
+
+      <div class="admin-form-actions">
+        <button type="submit" class="btn btn-gold" id="saveProjectBtn">SAQLASH</button>
+        <button type="button" class="btn btn-ghost" id="cancelFormBtn">BEKOR QILISH</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -14,6 +14,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
+// Auth SDK faqat admin.html'da yuklanadi — boshqa sahifalarda xavfsiz o'tkazib yuboriladi.
+const auth = (typeof firebase.auth === 'function') ? firebase.auth() : null;
 
 // ==========================================================
 // BUYURTMA FORMASI -> FIRESTORE

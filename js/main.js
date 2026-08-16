@@ -99,18 +99,19 @@ document.querySelectorAll('.mbn-btn').forEach(btn => {
 });
 
 // ====== SCROLL REVEAL (single elements) ======
-const revealEls = document.querySelectorAll('.reveal');
-if (revealEls.length) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  revealEls.forEach(el => io.observe(el));
-}
+const revealIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in');
+      revealIO.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+// Call this after injecting new .reveal elements dynamically (e.g. Firestore-rendered cards)
+window.scanReveal = () => {
+  document.querySelectorAll('.reveal:not(.in)').forEach(el => revealIO.observe(el));
+};
 
 // ====== SCROLL REVEAL (stagger grids) ======
 const staggerEls = document.querySelectorAll('.stagger');
@@ -127,15 +128,15 @@ if (staggerEls.length) {
 }
 
 // ====== PORTFOLIO FILTER ======
-const filterBtns = document.querySelectorAll('.filter-btn');
-const pfCards = document.querySelectorAll('[data-category]');
-if (filterBtns.length && pfCards.length) {
+function initPortfolioFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const pfCards = document.querySelectorAll('[data-category]');
+  if (!filterBtns.length || !pfCards.length) return;
   const applyFilter = (cat) => {
     pfCards.forEach(card => {
       const c = card.getAttribute('data-category');
       if (cat === 'all' || c === cat) {
         card.style.display = '';
-        // Allow next paint, then animate
         requestAnimationFrame(() => {
           card.style.opacity = '1';
           card.style.transform = 'translateY(0)';
@@ -153,7 +154,6 @@ if (filterBtns.length && pfCards.length) {
       applyFilter(cat);
     });
   });
-  // Auto-filter from URL query ?cat=...
   const params = new URLSearchParams(window.location.search);
   const auto = params.get('cat');
   if (auto) {
@@ -165,6 +165,8 @@ if (filterBtns.length && pfCards.length) {
     }
   }
 }
+window.initPortfolioFilter = initPortfolioFilter;
+initPortfolioFilter();
 
 // ====== SERVICE SELECT (booking form) ======
 const serviceOpts = document.querySelectorAll('.service-opt');
