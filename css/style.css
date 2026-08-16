@@ -187,17 +187,16 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
   color:var(--ivory);
   line-height:1.15;
   display:flex;
-  flex-direction:column;
-  gap:4px;
+  align-items:center;
 }
 .logo-img{
   display:block;
   height:34px;
   width:auto;
+  max-width:none;
 }
 @media(max-width:480px){
   .logo-img{height:26px;}
-  .logo small{font-size:8px;letter-spacing:2.5px;}
 }
 .logo small{
   font-family:'JetBrains Mono',monospace;
