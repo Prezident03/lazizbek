@@ -362,6 +362,12 @@ if (serviceOpts.length) {
   const services = document.getElementById('services');
   if (!works || !services) { setActive('home'); return; }
 
+  function hashTab() {
+    if (location.hash === '#works') return 'works';
+    if (location.hash === '#services') return 'services';
+    return 'home';
+  }
+
   const spy = new IntersectionObserver((entries) => {
     let current = 'home';
     entries.forEach(entry => {
@@ -375,5 +381,11 @@ if (serviceOpts.length) {
 
   spy.observe(works);
   spy.observe(services);
-  setActive('home');
+
+  // Set correct state immediately from the URL hash (handles arriving
+  // from another page via index.html#works before the browser's native
+  // anchor-scroll and the observer's first callback have run).
+  setActive(hashTab());
+  setTimeout(() => setActive(hashTab()), 60);
+  window.addEventListener('hashchange', () => setActive(hashTab()));
 })();
