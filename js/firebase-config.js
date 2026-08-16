@@ -4,12 +4,12 @@
 // bo'limidan olib, shu yerga qo'ying.
 // ==========================================================
 const firebaseConfig = {
-  apiKey: "SIZNING_API_KEY",
-  authDomain: "SIZNING_PROJECT.firebaseapp.com",
-  projectId: "SIZNING_PROJECT_ID",
-  storageBucket: "SIZNING_PROJECT.appspot.com",
-  messagingSenderId: "SIZNING_SENDER_ID",
-  appId: "SIZNING_APP_ID"
+  apiKey: "AIzaSyAjCKlkbj1nsux7x_ZZWBT2HJIlFDhxDqg",
+  authDomain: "lazizbek-media.firebaseapp.com",
+  projectId: "lazizbek-media",
+  storageBucket: "lazizbek-media.firebasestorage.app",
+  messagingSenderId: "108966266904",
+  appId: "1:108966266904:web:67f46e30417d025cf99b6d"
 };
 
 firebase.initializeApp(firebaseConfig);
