@@ -56,9 +56,11 @@ document.addEventListener('keydown', (e) => {
 // ====== MOBILE NAV TOGGLE ======
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
+const siteNavEl = document.getElementById('siteNav');
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
     navLinks.classList.toggle('open');
+    if (siteNavEl) siteNavEl.classList.toggle('menu-open', navLinks.classList.contains('open'));
     const icon = navToggle.querySelector('i');
     if (icon) {
       if (navLinks.classList.contains('open')) {
@@ -73,6 +75,7 @@ if (navToggle && navLinks) {
   navLinks.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       navLinks.classList.remove('open');
+      if (siteNavEl) siteNavEl.classList.remove('menu-open');
       const icon = navToggle.querySelector('i');
       if (icon) {
         icon.classList.remove('ti-x');

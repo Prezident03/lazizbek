@@ -166,6 +166,13 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
   background:rgba(5,5,4,0.92);
   border-bottom-color:var(--line-soft);
 }
+@media(max-width:900px){
+  .nav.menu-open{
+    background:#050504;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+  }
+}
 .nav-inner{
   max-width:var(--maxw);margin:0 auto;padding:20px 40px;
   display:flex;align-items:center;justify-content:space-between;
