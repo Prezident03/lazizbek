@@ -327,3 +327,41 @@ if (serviceOpts.length) {
     grid.scrollLeft += e.deltaY;
   }, { passive: false });
 })();
+
+// MOBILE APP TAB BAR — active state (scroll-spy on home, static on other pages)
+(() => {
+  const tabs = document.querySelectorAll('.mbn-btn');
+  if (!tabs.length) return;
+  const path = location.pathname.split('/').pop() || 'index.html';
+  const isHome = path === 'index.html' || path === '';
+
+  function setActive(name) {
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.tab === name));
+  }
+
+  if (!isHome) {
+    // Non-home pages: highlight by filename
+    if (path === 'buyurtma.html') setActive('contact');
+    else setActive('');
+    return;
+  }
+
+  const works = document.getElementById('works');
+  const services = document.getElementById('services');
+  if (!works || !services) { setActive('home'); return; }
+
+  const spy = new IntersectionObserver((entries) => {
+    let current = 'home';
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        current = entry.target.id === 'works' ? 'works' : 'services';
+      }
+    });
+    const anyIntersecting = entries.some(e => e.isIntersecting);
+    setActive(anyIntersecting ? current : 'home');
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+  spy.observe(works);
+  spy.observe(services);
+  setActive('home');
+})();
