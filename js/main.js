@@ -57,32 +57,34 @@ document.addEventListener('keydown', (e) => {
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
 const siteNavEl = document.getElementById('siteNav');
+const navBackdrop = document.getElementById('navBackdrop');
+function closeMobileMenu() {
+  navLinks.classList.remove('open');
+  if (siteNavEl) siteNavEl.classList.remove('menu-open');
+  if (navBackdrop) navBackdrop.classList.remove('open');
+  const icon = navToggle.querySelector('i');
+  if (icon) {
+    icon.classList.remove('ti-x');
+    icon.classList.add('ti-menu-2');
+  }
+}
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    if (siteNavEl) siteNavEl.classList.toggle('menu-open', navLinks.classList.contains('open'));
-    const icon = navToggle.querySelector('i');
-    if (icon) {
-      if (navLinks.classList.contains('open')) {
-        icon.classList.remove('ti-menu-2');
-        icon.classList.add('ti-x');
-      } else {
-        icon.classList.remove('ti-x');
-        icon.classList.add('ti-menu-2');
-      }
+    const opening = !navLinks.classList.contains('open');
+    if (opening) {
+      navLinks.classList.add('open');
+      if (siteNavEl) siteNavEl.classList.add('menu-open');
+      if (navBackdrop) navBackdrop.classList.add('open');
+      const icon = navToggle.querySelector('i');
+      if (icon) { icon.classList.remove('ti-menu-2'); icon.classList.add('ti-x'); }
+    } else {
+      closeMobileMenu();
     }
   });
   navLinks.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      if (siteNavEl) siteNavEl.classList.remove('menu-open');
-      const icon = navToggle.querySelector('i');
-      if (icon) {
-        icon.classList.remove('ti-x');
-        icon.classList.add('ti-menu-2');
-      }
-    });
+    a.addEventListener('click', closeMobileMenu);
   });
+  if (navBackdrop) navBackdrop.addEventListener('click', closeMobileMenu);
 }
 
 // ====== MOBILE BOTTOM NAV ======
