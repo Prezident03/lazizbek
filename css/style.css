@@ -352,9 +352,6 @@ p{color:var(--stone);font-size:15px;line-height:1.7;}
   min-width:177.78vh; /* 16:9 */
   transform:translate(-50%,-50%);
 }
-@media(max-width:768px){
-  .hero-video-embed{display:none;}
-}
 .hero-photo-overlay{
   position:absolute;inset:0;
   z-index:2;
