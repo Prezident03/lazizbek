@@ -341,8 +341,15 @@ if (serviceOpts.length) {
 
   if (!isHome) {
     // Non-home pages: highlight by filename
-    if (path === 'buyurtma.html') setActive('contact');
-    else setActive('');
+    const pageTabMap = {
+      'portfolio.html': 'works',
+      'project.html': 'works',
+      'buyurtma.html': 'contact',
+      'narxlar.html': '',
+      'haqida.html': ''
+    };
+    const tabName = pageTabMap[path];
+    if (tabName) setActive(tabName);
     return;
   }
 
